@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <H1>PersonalCloud</H1>
+        <h1>PersonalCloud</h1>
       </div>
     </main>
   )

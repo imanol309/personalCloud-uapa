@@ -1,24 +1,20 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "123456789";
-$db = "music";
-
+// Package for variable of enviromennt
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 $conexion = new mysqli($_ENV["MYSQLHOST"], $_ENV["MYSQLUSER"], $_ENV["MYSQLPASSWORD"], $_ENV["MYSQL_DATABASE"]);
 
-// Conexion con variables Locales
-$conexion = new mysqli($host, $user, $pass, $db);
-
 if ($conexion->connect_error) {
-    die ("Error en la conexion de la base de datos, revisa de nuevo" . $conexion->connect_error);
+    die("Error en la conexion de la base de datos" . $conexion->connect_error);
 }
 
 header("Content-Type: application/json");
 $metodo = $_SERVER['REQUEST_METHOD'];
 
-switch ($metodo) { 
-    case 'GET': 
+switch ($metodo) {
+    case 'GET':
         getData($conexion, 'gender');
         break;
     default:
@@ -26,8 +22,9 @@ switch ($metodo) {
         break;
 }
 
-function getData($conexion, $table) {
-    $slq = "SELECT * FROM gender";
+function getData($conexion, $table)
+{
+    $slq = "SELECT * FROM " . $table;
     $result = $conexion->query($slq);
     if ($result->num_rows > 0) {
         $datos = array();
@@ -37,6 +34,5 @@ function getData($conexion, $table) {
         echo json_encode($datos);
     }
 }
-
 
 ?>

@@ -2,7 +2,7 @@
 
 php -S localhost:8000
 
-Baja paquete composer
+## Baja paquete composer
 composer install
 
 ## Descomentar paquete de mysql

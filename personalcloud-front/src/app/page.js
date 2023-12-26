@@ -1,13 +1,12 @@
-import styles from './page.module.css'
-import NavBar from './components/navbar.js';
+import { NavBar } from './components/navbar/NavBar';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <div>
         <h1>PersonalCloud</h1>
+        <NavBar />
       </div>
-      <NavBar/>
     </main>
-  )
+  );
 }

@@ -35,7 +35,31 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Styles
 
-## IMG Prueba
+En el archivo globals.css deben estar los estilos generales y las variables para que sean mas facil de ser reutilizadas.
 
-![Alt text](image.png)
+Cada componente debe tener un archivo con el mismo nombre solo con la extencion .css
+
+Ejemplo:
+
+- /banner
+  - Banner.jsx
+  - Banner.css
+
+## Estructura de carpetas
+
+La esctructura de las carpetas para la realizacion del proyecto es la siguente:
+
+- ##### components
+
+  Aqui se definen los componentes como por ejemplo: navbar,footer, hero, dashboard, etc.......
+
+- ##### ui
+
+  Aqui adentro se crearan los componentes mas minimos y reutilizables, como por ejemplos: botones, titulos, avatar, etc...
+
+- ##### lib
+  Funciones y utilidades compartidas, ejemplo:
+  funciones para realizar llamadas a la API,
+  funciones de utilidad, etc.....

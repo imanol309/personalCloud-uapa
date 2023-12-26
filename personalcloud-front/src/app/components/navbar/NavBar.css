@@ -1,0 +1,9 @@
+/* solo es un ejemplo */
+main {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  color: var(--tercer-color);
+  font-size: var(--font-weight-bold);
+}

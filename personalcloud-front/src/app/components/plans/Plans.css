@@ -1,0 +1,26 @@
+.Plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  height: 80v;
+  margin: 60px 0;
+}
+
+.Plans__Title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.Plans__Description {
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.Plans__List {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,8 +1,6 @@
-import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import { rubik } from './ui';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'PersonalCloud',
@@ -15,7 +13,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${rubik.className} antialiased page`}>{children}</body>
     </html>
   );
 }

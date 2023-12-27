@@ -1,0 +1,33 @@
+.WhyChooseUs {
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 0 100px 0; */
+}
+
+.WhyChooseUs__Title {
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.WhyChooseUs__Description {
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  margin: 10px 0;
+  line-height: 2;
+}
+
+.WhyChooseUs__List {
+  line-height: 3;
+  margin: 10px 0;
+}
+
+.WhyChooseUs__List--Item {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+}
+
+.WhyChooseUs__Box {
+  width: 750px;
+}

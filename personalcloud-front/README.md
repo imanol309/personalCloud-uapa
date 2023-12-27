@@ -47,6 +47,16 @@ Ejemplo:
   - Banner.jsx
   - Banner.css
 
+Metodologia css
+
+Como metodologia de css utilizaremos la BEM, con la caracteristica de que cada bloque, elemento y modificador empiece con mayuscula, por Ejemplo:
+
+- Banner
+- Banner\_\_Title
+- Banner\_\_Title--Bold
+
+
+
 ## Estructura de carpetas
 
 La esctructura de las carpetas para la realizacion del proyecto es la siguente:

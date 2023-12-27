@@ -1,0 +1,45 @@
+.CardPlans {
+  /* border: 8px solid var(--color-primary); */
+  border: 2px solid var(--color-secondary);
+  border-radius: 10px;
+  padding: 50px 30px;
+  width: 400px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardPlans__Title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+.CardPlans__List {
+  line-height: 2.5;
+}
+
+.CardPlans__List--Item {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+
+.CardPlans__Price {
+  font-size: var(--font-size-sm);
+}
+
+.CardPlans__Price--modify {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.CardPlans__Image {
+  width: 200px;
+  height: 200px;
+}
+.CardPlans__Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

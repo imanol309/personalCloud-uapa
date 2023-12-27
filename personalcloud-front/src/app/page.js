@@ -1,12 +1,17 @@
-import { NavBar } from './components/navbar/NavBar';
+import { NavBar, Hero, WhyChooseUs, Plans, Footer } from './components/';
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <h1>PersonalCloud</h1>
+    <>
+      <header>
         <NavBar />
-      </div>
-    </main>
+      </header>
+      <main>
+        <Hero />
+        <WhyChooseUs />
+        <Plans />
+      </main>
+      <Footer />
+    </>
   );
 }

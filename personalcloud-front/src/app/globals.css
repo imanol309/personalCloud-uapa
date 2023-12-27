@@ -1,16 +1,14 @@
-/* Importar la fuente Rubik desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap');
-
 :root {
   --color-primary: #30235b;
   --color-secondary: #4f5665;
   --color-accent1: #d9d9d9;
   --color-accent2: #f8f8f8;
   --font-size-xs: 16px;
-  --font-size-sm: 18px;
-  --font-size-md: 20px;
-  --font-size-lg: 48px;
-  --font-size-xl: 52px;
+  --font-size-sm: 20px;
+  --font-size-md: 28px;
+  --font-size-lg: 36px;
+  --font-size-xl: 42px;
+  --font-size-2xl: 52px;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -24,7 +22,7 @@
   box-sizing: border-box;
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-light);
-  font-family: 'Rubik', sans-serif;
+  scroll-behavior: smooth;
 }
 
 ol > li,
@@ -33,11 +31,31 @@ ul > li {
 }
 
 a {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
   color: black;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
 }
-
-a:hover {
-  color: var(--color-primary);
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: var(--color-primary);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+.page {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f6f6f6;
 }

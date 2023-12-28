@@ -31,14 +31,26 @@ switch ($metodo) {
             getData($conexion, 'file');
         } else {
             echo 'No existe ese metodo';
-        } 
+        }
         break;
     case 'POST':
         if ($params[1] == 'users') {
             PostDataUser($conexion, 'users');
         }
         if ($params[1] == 'file') {
-            PostDataFile($conexion,'file');
+            PostDataFile($conexion, 'file');
+        }
+        break;
+    case 'PUT':
+        if ($params[1] == 'users') {
+            if ($params[2]) {
+                updateDataUser($conexion, $params[2]);
+            }
+        }
+        if ($params[1] == 'file') {
+            if ($params[2]) {
+                updateDataFile($conexion, $params[2]);
+            }
         }
         break;
     default:
@@ -144,6 +156,53 @@ function PostDataFile($conexion, $table)
     if ($result) {
         $dato['id'] = $conexion->insert_id;
         echo json_encode($dato);
+    } else {
+        echo json_encode(array('error' => 'Error al crear usuario'));
+    }
+}
+
+
+function updateDataUser($conexion, $id)
+{
+    validateAPIKey();
+    $dato = json_decode(file_get_contents("php://input"), true);
+    $body = [
+        'name' => $dato['name'],
+        'password' => $dato['password'],
+        'profile_tips' => $dato['profile_tips'],
+        'status' => $dato['status'],
+        'access_token' => $dato['access_token'],
+    ];
+    $sql = "UPDATE users SET name = '{$body['name']}', password = '{$body['password']}', 
+    profile_tips = '{$body['profile_tips']}', status = '{$body['status']}', 
+    access_token = '{$body['access_token']}' WHERE id = $id";
+    $result = $conexion->query($sql);
+
+    if ($result) {
+        echo json_encode(array('mensaje' => 'Usuario actualizado'));
+    } else {
+        echo json_encode(array('error' => 'Error al crear usuario'));
+    }
+}
+
+function updateDataFile($conexion, $id)
+{
+    validateAPIKey();
+    $fechaActual = new DateTime();
+    $fechaActual = $fechaActual->format('Y-m-d');
+
+    $dato = json_decode(file_get_contents("php://input"), true);
+    $body = [
+        'type' => $dato['type'],
+        'link' => $dato['link'],
+        'name_file' => $dato['name_file'],
+    ];
+    $sql = "UPDATE file SET type = '{$body['type']}', link = '{$body['link']}', 
+    name_file = '{$body['name_file']}' WHERE id = $id";
+    $result = $conexion->query($sql);
+
+    if ($result) {
+        echo json_encode(array('mensaje' => 'Usuario actualizado'));
     } else {
         echo json_encode(array('error' => 'Error al crear usuario'));
     }

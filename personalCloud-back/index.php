@@ -21,6 +21,12 @@ $params = explode('/', $url);
 
 switch ($metodo) {
     case 'GET':
+        if ($url == '/') {
+            $html = file_get_contents('index.html');
+            header('Content-Type: text/html');
+            echo $html;
+            exit();
+        }
         if ($params[1] == 'users') {
             if ($params[2]) {
                 getDataFileForUser($conexion, $params[2]);

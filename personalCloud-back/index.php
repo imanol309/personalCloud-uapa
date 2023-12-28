@@ -53,6 +53,13 @@ switch ($metodo) {
             }
         }
         break;
+    case 'DELETE':
+        if ($params[1] == 'file') {
+            if ($params[2]) {
+                deleteDataFile($conexion, $params[2]);
+            }
+        }
+        break;
     default:
         echo 'No existe ese metodo';
         break;
@@ -202,10 +209,27 @@ function updateDataFile($conexion, $id)
     $result = $conexion->query($sql);
 
     if ($result) {
-        echo json_encode(array('mensaje' => 'Usuario actualizado'));
+        echo json_encode(array('mensaje' => 'Archivo actualizado'));
     } else {
-        echo json_encode(array('error' => 'Error al crear usuario'));
+        echo json_encode(array('error' => 'Error al crear Archivo'));
     }
 }
+
+function deleteDataFile($conexion, $id)
+{
+    validateAPIKey();
+    $fechaActual = new DateTime();
+    $fechaActual = $fechaActual->format('Y-m-d');
+
+    $dato = json_decode(file_get_contents("php://input"), true);
+    $sql = "DELETE FROM file WHERE id = $id";
+    $result = $conexion->query($sql);
+    if ($result) {
+        echo json_encode(array('mensaje' => 'Archivo eliminando correctamente'));
+    } else {
+        echo json_encode(array('error' => 'Error al eliminar Archivo'));
+    }
+}
+
 
 ?>

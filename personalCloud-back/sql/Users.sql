@@ -6,12 +6,14 @@ CREATE DATABASE personalcloud;
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
+  `email` text DEFAULT NULL,
   `password` text,
   `date` date DEFAULT NULL,
   `profile_img` text,
   `profile_tips` text,
   `status` tinyint(1) DEFAULT NULL,
   `id_file` int DEFAULT NULL,
+  `access_token ` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   UNIQUE KEY `id_file_unique` (`id_file`)
@@ -20,6 +22,8 @@ CREATE TABLE `users` (
 -- Crear tabla de file para guardar los archivos 
 CREATE TABLE `file` (
   `id` int NOT NULL,
+  `name_file` text DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
   `link` text,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id`),

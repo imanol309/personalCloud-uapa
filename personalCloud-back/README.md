@@ -1,6 +1,7 @@
 
 # API de Archivos
 
+<<<<<<< HEAD
 Este proyecto es una API REST para gestionar archivos y usuarios. Permite las operaciones CRUD (crear, leer, actualizar, eliminar) tanto para usuarios como para archivos.
 
 ## Rutas
@@ -44,3 +45,11 @@ La API utiliza PHP con el patron MVC para el código y MySQL como base de datos.
 - Imanol Perez 
 - Ismanol Garcia 
 - Yery Perez
+=======
+## Baja paquete composer
+composer install
+
+## Descomentar paquete de mysql
+
+![Alt text](image.png)
+>>>>>>> origin/frontend-ismanolgarcia

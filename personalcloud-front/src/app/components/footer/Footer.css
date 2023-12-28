@@ -1,0 +1,39 @@
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 150px 0 50px 0;
+}
+
+.Footer__Description {
+  font-size: var(--font-size-xs);
+  line-height: 2;
+}
+.Footer__CopyRight{
+  font-size: var(--font-size-xs);
+}
+.Footer__SocialLinks{
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+.Footer__Box {
+  width: 400px;
+}
+
+.Footer__Links {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.Footer__List--Title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+.Footer__List {
+  line-height: 1.5;
+}
+
+.Footer__List--Item {
+  font-size: var(--font-size-xs);
+}

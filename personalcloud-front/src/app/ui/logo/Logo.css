@@ -1,0 +1,13 @@
+.Logo {
+  display: flex;
+  align-items: center;
+}
+
+.Logo__Title {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.Logo__Title--Bold {
+  font-weight: var(--font-weight-bold);
+}

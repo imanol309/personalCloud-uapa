@@ -1,0 +1,33 @@
+.Hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Hero__Title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+.Hero__Title--Bold {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.Hero__Descripcion {
+  width: 60%;
+  margin: 20px 0 40px 0;
+  color: var(--color-secondary);
+  text-align: justify;
+  line-height: 1.8;
+  font-size: var(--font-size-sm); 
+}
+
+.Hero__Image {
+  max-width: 100%;
+  height: auto;
+}
+

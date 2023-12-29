@@ -10,7 +10,7 @@ export const NavBar = () => {
       <ul className="Navbar__Links">
         <li>
           <a className="Navbar__Item" href="#whychooseus">
-            Por qué elegir PersonalCloud?
+            ¿Por qué elegirnos?
           </a>
         </li>
         <li>

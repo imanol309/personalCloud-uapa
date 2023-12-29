@@ -1,9 +1,11 @@
-import './Button.css'
+import "./Button.css";
+import Link from "next/link";
 
-export const Button = ({text, type}) => {
+export const Button = ({ text, type }) => {
   return (
-    <button className={`button ${type}`}>
-    {text}
-    </button>
-  )
-}
+    <Link className={`button ${type}`} href="/dashboard">
+      {text}
+      {/* <Link href="/dashboard">{text}</Link> */}
+    </Link>
+  );
+};

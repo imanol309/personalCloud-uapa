@@ -2,27 +2,29 @@ import { CardPlans } from '@/app/ui';
 import './Plans.css';
 
 const premium = [
-  'este plan es mejor1',
-  'este plan es mejor23',
-  'este plan es mejor32423',
-  'este plan es mejor545',
-  'este plan es mejor656',
+  'Subir archivos ilimitados',
+  'Velocidad de subida y descarga rápida', 
+  'Compartir archivos con enlace',
+  'Cifrado de extremo a extremo',
+  'Soporte prioritario 24/7'
 ];
 
-const standar = [
-  'este plan es mejor2',
-  'esdgsdgsdste plan es mejor',
-  'este plansdfsdfsd es mejor',
-  'este plan es mejvcxvzxcvxor',
-  'este plan es mejobtyyyr',
+const standard = [
+  'Subir archivos hasta 10GB',
+  'Velocidad de subida y descarga estándar',
+  'Compartir archivos con enlace',
+  'Cifrado de archivos',
+  'Soporte en horario hábil'  
 ];
+
 const free = [
-  'este plan es mejor3',
-  'e5t334ste plan es mejor',
-  'este p4534534lan es mejor',
-  'este plan es 453453mejor',
-  'este plan es mejo34534534r',
+  'Subir archivos hasta 2GB',
+  'Velocidad de subida y descarga limitada',
+  'Compartir archivos con enlace (max 5)',
+  'Sin cifrado',
+  'Soporte por email'
 ];
+
 export const Plans = () => {
   return (
     <>
@@ -36,9 +38,9 @@ export const Plans = () => {
         </div>
 
         <div className="Plans__List">
-          <CardPlans title="Plan Free" price="12" lists={free} />
-          <CardPlans title="Plan Estándar" price="12" lists={standar} />
-          <CardPlans title="Plan Premium" price="12" lists={premium} />
+          <CardPlans title="Plan Free" price="0" lists={free} />
+          <CardPlans title="Plan Estándar" price="4" lists={standard} />
+          <CardPlans title="Plan Premium" price="10" lists={premium} />
         </div>
       </div>
     </>

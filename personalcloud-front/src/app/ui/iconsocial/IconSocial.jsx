@@ -1,9 +1,8 @@
-'use client';
-import './IconSocial.css';
-import Image from 'next/image';
-import facebook from '../../../../public/icons/facebook.png';
-import instagram from '../../../../public/icons/logotipo-de-instagram.png';
-import gorjeo from '../../../../public/icons/gorjeo.png';
+import "./IconSocial.css";
+import Image from "next/image";
+import facebook from "../../../../public/icons/facebook.png";
+import instagram from "../../../../public/icons/logotipo-de-instagram.png";
+import gorjeo from "../../../../public/icons/gorjeo.png";
 export const IconSocial = ({ type }) => {
   return (
     <>

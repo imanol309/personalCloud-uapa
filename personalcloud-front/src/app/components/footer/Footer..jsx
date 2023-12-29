@@ -1,29 +1,28 @@
-'use client';
-import { Logo } from '@/app/ui';
-import './Footer.css';
-import Image from 'next/image';
-import fill from '../../../../public/icons/fill.png';
-import { IconSocial } from '@/app/ui';
+import { Logo } from "@/app/ui";
+import "./Footer.css";
+import Image from "next/image";
+import fill from "../../../../public/icons/fill.png";
+import { IconSocial } from "@/app/ui";
 
 const products = [
-  'Download',
-  'Pricing',
-  'Locations',
-  'Server',
-  'Countries',
-  'Blog',
+  "Download",
+  "Pricing",
+  "Locations",
+  "Server",
+  "Countries",
+  "Blog",
 ];
 
 const engages = [
-  'About PersonalCloud?',
-  'FAQ',
-  'Tutorials',
-  'About Us',
-  'Privacy Policy',
-  'Terms of Service',
+  "About PersonalCloud?",
+  "FAQ",
+  "Tutorials",
+  "About Us",
+  "Privacy Policy",
+  "Terms of Service",
 ];
 
-const moneys = ['Affiliate', 'Become Partner'];
+const moneys = ["Affiliate", "Become Partner"];
 
 export const Footer = () => {
   return (

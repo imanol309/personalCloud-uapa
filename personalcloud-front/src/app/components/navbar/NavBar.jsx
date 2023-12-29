@@ -1,6 +1,6 @@
-'use client';
-import { Button, Logo } from '@/app/ui';
-import './NavBar.css';
+import { Button, Logo } from "@/app/ui";
+import "./NavBar.css";
+
 export const NavBar = () => {
   return (
     <nav className="Navbar">

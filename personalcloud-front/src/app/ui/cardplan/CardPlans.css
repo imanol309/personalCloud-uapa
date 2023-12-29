@@ -2,9 +2,9 @@
   /* border: 8px solid var(--color-primary); */
   border: 2px solid var(--color-secondary);
   border-radius: 10px;
-  padding: 50px 30px;
-  width: 400px;
-  height: 800px;
+  padding: 40px 30px;
+  /* width: 400px; */
+  height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,7 +20,7 @@
 }
 
 .CardPlans__List--Item {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-secondary);
 }
 

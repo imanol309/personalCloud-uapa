@@ -2,7 +2,8 @@
   height: 80vh;
   display: flex;
   justify-content: space-between;
-  /* margin: 0 0 100px 0; */
+  padding-top: 5%;
+  margin-bottom: 10%;
 }
 
 .WhyChooseUs__Title {

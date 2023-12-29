@@ -1,6 +1,6 @@
-'use client';
-import { Button, Logo } from '@/app/ui';
-import './NavBar.css';
+import { Button, Logo } from "@/app/ui";
+import "./NavBar.css";
+
 export const NavBar = () => {
   return (
     <nav className="Navbar">
@@ -10,7 +10,7 @@ export const NavBar = () => {
       <ul className="Navbar__Links">
         <li>
           <a className="Navbar__Item" href="#whychooseus">
-            Por qué elegir PersonalCloud?
+            ¿Por qué elegirnos?
           </a>
         </li>
         <li>

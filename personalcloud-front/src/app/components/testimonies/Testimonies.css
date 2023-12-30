@@ -7,7 +7,8 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  margin: 100px 0;
+  padding-top: 5%;
+  margin-bottom: 15%;
 }
 
 .Testimonies__header {

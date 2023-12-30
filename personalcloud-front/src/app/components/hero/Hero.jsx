@@ -1,8 +1,7 @@
-'use client';
-import './Hero.css';
-import Image from 'next/image';
-import fill from '../../../../public/icons/fill.png';
-import { Button } from '@/app/ui';
+import "./Hero.css";
+import Image from "next/image";
+import fill from "../../../../public/icons/fill.png";
+import { Button } from "@/app/ui";
 export const Hero = () => {
   return (
     <div className="Hero">

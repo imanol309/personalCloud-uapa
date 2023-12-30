@@ -15,7 +15,7 @@ export const CardPlans = ({ title, lists, price }) => {
         <h2 className="CardPlans__Title">{title}</h2>
         <ul className="CardPlans__List">
           {lists.map((list) => (
-            <li key={list} className="CardPlans__List--Item">✔️{list}</li>
+            <li key={list} className="CardPlans__List--Item">✔️ {list}</li>
           ))}
         </ul>
       </div>

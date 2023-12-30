@@ -1,5 +1,4 @@
-import { NavBar, Hero, WhyChooseUs, Plans, Footer } from './components/';
-import { UserButton } from "@clerk/nextjs";
+import { NavBar, Hero, WhyChooseUs, Plans, Testimonies ,Footer } from './components/';
 
 export default function Home() {
   return (
@@ -11,6 +10,7 @@ export default function Home() {
         <Hero />
         <WhyChooseUs />
         <Plans />
+        <Testimonies />
       </main>
       <Footer />
     </>

@@ -45,7 +45,7 @@ export const Footer = () => {
             <h3 className="Footer__List--Title">Products</h3>
             {products.map((product) => (
               <li key={product}>
-                <a href="" className="Footer__List--Item">
+                <a href="" className="Footer__List--Item link">
                   {product}
                 </a>
               </li>
@@ -57,7 +57,7 @@ export const Footer = () => {
             <h3 className="Footer__List--Title">Engage</h3>
             {engages.map((engage) => (
               <li key={engage}>
-                <a href="" className="Footer__List--Item">
+                <a href="" className="Footer__List--Item link">
                   {engage}
                 </a>
               </li>
@@ -69,7 +69,7 @@ export const Footer = () => {
             <h3 className="Footer__List--Title">Ear Money</h3>
             {moneys.map((money) => (
               <li key={money}>
-                <a href="" className="Footer__List--Item">
+                <a href="" className="Footer__List--Item link">
                   {money}
                 </a>
               </li>

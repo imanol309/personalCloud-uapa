@@ -1,4 +1,4 @@
-import { NavBar, Hero, WhyChooseUs, Plans, Testimonies, Footer } from './components/';
+import { NavBar, Hero, WhyChooseUs, Plans, Testimonies ,Footer } from './components/';
 
 export default function Home() {
   return (

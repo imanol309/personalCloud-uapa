@@ -4,6 +4,7 @@
 }
 
 .Logo__Title {
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
 }

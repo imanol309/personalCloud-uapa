@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs'
 import Head from 'next/head';
 import { rubik } from './ui';
 import './globals.css';
@@ -9,11 +10,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <Head>
-        <link rel="shortcut icon" href="./favicon.ico" />
-      </Head>
-      <body className={`${rubik.className} antialiased page`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="es">
+        <Head>
+          <link rel="shortcut icon" href="favicon.ico" />
+        </Head>
+        <body className={`${rubik.className} antialiased page`}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }

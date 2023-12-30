@@ -6,7 +6,7 @@ import "../navbar/NavBar.css";
 function NavBarSign() {
   const pathname = usePathname();
   return (
-    <nav className="Navbar">
+    <nav className="Navbar" style={{ marginBottom: "5%" }}>
       <div className="Navbar__Brand">
         <Logo />
       </div>

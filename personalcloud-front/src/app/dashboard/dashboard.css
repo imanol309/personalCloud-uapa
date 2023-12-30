@@ -1,5 +1,9 @@
-.container {
+.container__dashboard {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+
+.container__cloud {
+    width: 75%;
 }

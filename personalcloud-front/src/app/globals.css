@@ -25,8 +25,8 @@
   scroll-behavior: smooth;
 }
 
-ol > li,
-ul > li {
+ol>li,
+ul>li {
   list-style: none;
 }
 
@@ -50,14 +50,19 @@ a {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
+
 .link:hover:after {
   width: 100%;
   left: 0;
 }
 
 .page {
-  width: 85%;
   margin: 0 auto;
-  padding: 20px;
   background-color: #f6f6f6;
+}
+
+.container__home {
+  width: 85%;
+  padding: 20px;
+  margin: 0 auto;
 }

@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="es">
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="favicon.ico" />
         </Head>
         <body className={`${rubik.className} antialiased page`}>{children}</body>
       </html>

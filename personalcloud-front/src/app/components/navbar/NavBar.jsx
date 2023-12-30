@@ -9,29 +9,29 @@ export const NavBar = () => {
       </div>
       <ul className="Navbar__Links">
         <li>
-          <a className="Navbar__Item" href="#whychooseus">
+          <a className="Navbar__Item link" href="#whychooseus">
             ¿Por qué elegirnos?
           </a>
         </li>
         <li>
-          <a className="Navbar__Item" href="#plans">
+          <a className="Navbar__Item link" href="#plans">
             Planes
           </a>
         </li>
         <li>
-          <a className="Navbar__Item" href="#testimonials">
+          <a className="Navbar__Item link" href="#testimonials">
             Testimonios
           </a>
         </li>
         <li>
-          <a className="Navbar__Item" href="#help">
+          <a className="Navbar__Item link" href="#help">
             Ayuda
           </a>
         </li>
       </ul>
       <div className="Navbar__Auth">
-        <Button text="Iniciar sesion" type="clean" />
-        <Button text="Registrarse" type="outline" />
+        <Button text="Iniciar sesion" type="clean" urlSign="/sign-in"/>
+        <Button text="Registrarse" type="outline" urlSign="/sign-up" />
       </div>
     </nav>
   );

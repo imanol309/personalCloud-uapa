@@ -12,7 +12,7 @@
 }
 
 .WhyChooseUs__Description {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: var(--font-size-sm);
   margin: 10px 0;
   line-height: 2;
@@ -25,7 +25,7 @@
 
 .WhyChooseUs__List--Item {
   font-size: var(--font-size-sm);
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .WhyChooseUs__Box {

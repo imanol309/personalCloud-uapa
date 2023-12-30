@@ -8,6 +8,7 @@
 }
 
 .Plans__Title {
+  color: var(--color-primary);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   text-align: center;
@@ -15,6 +16,7 @@
 }
 
 .Plans__Description {
+  color: var(--color-secondary);
   font-size: var(--font-size-sm);
   text-align: center;
 }
@@ -23,4 +25,5 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  color: var(--color-secondary);
 }

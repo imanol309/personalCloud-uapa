@@ -1,0 +1,56 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.Testimonies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 100px 0;
+}
+
+.Testimonies__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Testimonies__Title {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.Testimonies__Description {
+  color: var(--color-secondary);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  line-height: 2;
+  width: 600px;
+}
+
+
+.Slider {
+  width: 100%;
+}
+
+.slick-arrow {
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
+.slick-next::before {
+  color: var(--color-primary);
+}
+.slick-prev::before {
+  width: 200px;
+  color: var(--color-primary);
+}
+
+

@@ -1,0 +1,49 @@
+.CardTestimony {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 250px;
+  border: 3.5px solid var(--color-primary);
+  border-radius: 20px;
+  margin: 10px;
+  padding: 30px;
+  gap: 10px;
+}
+
+.CardTestimony__Header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CardTestimony__Avatar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Avatar__Name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+.Avatar__Location {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+}
+
+.CardTestimony__Opinion {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+}
+
+.CardTestimony__Point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Point__Number {
+  font-size: var(--font-size-xs);
+}

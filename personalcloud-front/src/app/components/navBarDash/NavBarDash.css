@@ -25,7 +25,7 @@
 
 .container__option {
     width: 80%;
-    height: 55%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -48,11 +48,13 @@
 
 .container__unlock {
     width: 80%;
-    height: 35%;
+    height: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
     align-items: center;
+    gap: 10px;
+    text-align: center;
 
 }

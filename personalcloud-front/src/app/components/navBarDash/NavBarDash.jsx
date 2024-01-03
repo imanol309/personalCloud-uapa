@@ -1,8 +1,5 @@
-"use client";
-// import "../../ui/logo/Logo.css";
 import Link from "next/link";
 import Image from "next/image";
-import outline from "../../../../public/icons/outline.png";
 import icon from '../../favicons/apple-touch-icon.png';
 import home from "../../../../public/icons/navBarDash/home.svg";
 import start from "../../../../public/icons/navBarDash/start.svg";
@@ -10,6 +7,8 @@ import trash from "../../../../public/icons/navBarDash/trash.svg";
 import unlock from "../../../../public/icons/navBarDash/unlock.svg";
 
 import "./NavBarDash.css";
+
+import ButtonUpdate from '../../ui/buttonUpdate/ButtonUpdate';
 
 function NavBarDash() {
   const dataOptionNavBar = [
@@ -72,9 +71,9 @@ function NavBarDash() {
           alt={"Unlock your plan"}
           className="icon__option"
         />
-        <h2>Desbloquea tu plan</h2>
-        <p>Almacenamiento ampliado, acceso a más funciones en tu nube</p>
-        <button>Update</button>
+        <h2 style={{fontSize: "16px"}}>Desbloquea tu plan</h2>
+        <p style={{fontSize: "13px", color: "#4f5665"}}>Almacenamiento ampliado, acceso a más funciones en tu nube</p>
+        <ButtonUpdate text={"Update"}/>
       </div>
     </div>
   );

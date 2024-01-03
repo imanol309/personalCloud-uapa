@@ -1,3 +1,7 @@
+import appleTouchIcon from './favicons/apple-touch-icon.png';
+import favicon16 from './favicons/favicon-16x16.png';
+import favicon32 from './favicons/favicon-32x32.png';
+import safariPinnedTab from './favicons/safari-pinned-tab.svg';
 import { ClerkProvider } from '@clerk/nextjs'
 import Head from 'next/head';
 import { rubik } from './ui';
@@ -13,7 +17,13 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="es">
         <Head>
-          <link rel="shortcut icon" href="favicon.ico" />
+          {/* <link rel="shortcut icon" href="favicon.ico" /> */}
+          <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon}/>
+          <link rel="icon" type="image/png" sizes="32x32" href={favicon32}/>
+          <link rel="icon" type="image/png" sizes="16x16" href={favicon16}/>
+          <link rel="mask-icon" href={safariPinnedTab} color="#30235b"/>
+          <meta name="msapplication-TileColor" content="#30235b"/>
+          <meta name="theme-color" content="#ffffff"></meta>
         </Head>
         <body className={`${rubik.className} antialiased page`}>{children}</body>
       </html>

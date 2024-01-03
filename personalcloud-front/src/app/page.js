@@ -1,8 +1,9 @@
 import { NavBar, Hero, WhyChooseUs, Plans, Testimonies ,Footer } from './components/';
+import './globals.css';
 
 export default function Home() {
   return (
-    <>
+    <div className='container__home'>
       <header>
         <NavBar />
       </header>
@@ -13,6 +14,6 @@ export default function Home() {
         <Testimonies />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

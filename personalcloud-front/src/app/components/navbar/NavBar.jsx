@@ -1,5 +1,6 @@
-import { Button, Logo } from "@/app/ui";
+import { Logo } from "@/app/ui";
 import "./NavBar.css";
+import User from './user/User';
 
 export const NavBar = () => {
   return (
@@ -30,8 +31,7 @@ export const NavBar = () => {
         </li>
       </ul>
       <div className="Navbar__Auth">
-        <Button text="Iniciar sesion" type="clean" urlSign="/sign-in"/>
-        <Button text="Registrarse" type="outline" urlSign="/sign-up" />
+        <User/>
       </div>
     </nav>
   );

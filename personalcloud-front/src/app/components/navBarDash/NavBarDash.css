@@ -19,9 +19,20 @@
     border-radius: 10%;
 }
 
-.font {
-    font-size: 20px;
-}
+.Logo__Title__dash {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .Logo__Title__dash--bold {
+    font-weight: var(--font-weight-bold);
+  }
+  
 
 .container__option {
     width: 80%;
@@ -32,7 +43,8 @@
 }
 
 .icon__option {
-    fill: #ffffff; 
+    fill: #ffffff;
+    filter: grayscale(100%); 
 
 }
 
@@ -44,6 +56,16 @@
     gap: 12px;
     color: var(--color-secondary);
     font-weight: var(--font-weight-regular);
+    border-radius: 5%;
+    transition: font-weight 0.3s ease;
+    fill: #ffffff;
+}
+
+.Title__option:hover{
+    background-color: var(--color-accent1);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+
 }
 
 .container__unlock {

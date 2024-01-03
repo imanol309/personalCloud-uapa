@@ -1,6 +1,6 @@
 import './CardTestimony.css';
 import Image from 'next/image';
-import facebook from '../../../../public/icons/estrella.png';
+import estrella from '../../../../public/icons/estrella.png';
 import { Avatar } from '@/app/ui';
 
 export const CardTestimony = ({ name, location, point, opinion }) => {
@@ -17,7 +17,7 @@ export const CardTestimony = ({ name, location, point, opinion }) => {
           </div>
           <div className="CardTestimony__Point">
             <span className="Point__Number">{point}</span>
-            <Image src={facebook} alt="hola" width={18} height={18} />
+            <Image src={estrella} alt="hola" width={18} height={18} />
           </div>
         </div>
         <div className="CardTestimony__Footer">

@@ -7,7 +7,7 @@ export const Hero = () => {
     <div className="Hero">
       <div className="Hero__Section">
         <h1 className="Hero__Title">
-          Bienvenido a Personal Cloud: <br />
+          {/* Bienvenido a Personal Cloud: <br /> */}
           <span className="Hero__Title--Bold">Tu Refugio Digital Privado</span>
         </h1>
         <p className="Hero__Descripcion">

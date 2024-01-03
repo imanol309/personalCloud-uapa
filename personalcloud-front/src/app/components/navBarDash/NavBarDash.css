@@ -1,6 +1,58 @@
 .container__dash {
     height: 100vh;
     width: 15%;
-    background-color: aqua;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
+.container__logo {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.icon__img {
+    border-radius: 10%;
+}
+
+.font {
+    font-size: 20px;
+}
+
+.container__option {
+    width: 80%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.icon__option {
+    fill: #ffffff; 
+
+}
+
+.Title__option{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-regular);
+}
+
+.container__unlock {
+    width: 80%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+
+}

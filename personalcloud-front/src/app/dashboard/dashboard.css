@@ -1,9 +1,10 @@
 .container__dashboard {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .container__cloud {
     width: 75%;
+    padding-inline-start: 2%;
 }

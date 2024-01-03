@@ -7,4 +7,7 @@
 .container__cloud {
     width: 75%;
     padding-inline-start: 2%;
+    padding-top: 3%;
+    display: flex;
+    justify-content: space-between;
 }

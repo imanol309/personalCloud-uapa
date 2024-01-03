@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import icon from "../../favicons/apple-touch-icon.png";
+import icon from "../../apple-touch-icon.png";
 
 // SVG on component of react
 import homeSVg from "../../../../public/icons/navBarDash/svg/Home";

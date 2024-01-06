@@ -7,14 +7,20 @@ import './AllFileSpace.css'
 
 function AllFileSpace() {
   const [viewMode, setViewMode] = useState(true);
+  const [hoverActivatedGrid, sethoverActivatedGrid] = useState(true);
+  const [hoverActivatedlist, sethoverActivatedlist] = useState(false);
+
 
   const convertToGrid = () => {
     setViewMode(true);
+    sethoverActivatedGrid(true)
+    sethoverActivatedlist(false)
   };
 
   const convertToList = () => {
     setViewMode(false);
-    console.log("ldld");
+    sethoverActivatedGrid(false)
+    sethoverActivatedlist(true)
   };
   return (
     <div className="container__cloud">
@@ -22,6 +28,8 @@ function AllFileSpace() {
         <SearchBox
           convertToGrid={convertToGrid}
           convertToList={convertToList}
+          hoverActivatedGrid={hoverActivatedGrid}
+          hoverActivatedlist={hoverActivatedlist}
         />
         <UserButton afterSignOutUrl="/" />
       </div>

@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .SearchBox__Input {
@@ -13,6 +14,11 @@
   outline: none;
   font-size: var(--font-size-xs);
   padding: 0 10px;
+}
+
+.container__button{
+  display: flex;
+  margin-right: 5%;
 }
 
 .SearchBox__Button {
@@ -32,6 +38,11 @@
 }
 
 .SearchBox__Button:hover {
+  background-color: #d9d9d9;
+  font-weight: var(--font-weight-semibold);
+}
+
+.Hover__Activated {
   background-color: #d9d9d9;
   font-weight: var(--font-weight-semibold);
 }

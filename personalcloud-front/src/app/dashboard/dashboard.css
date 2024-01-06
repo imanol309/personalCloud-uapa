@@ -2,19 +2,5 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-}
-
-.container__cloud {
-  width: 75%;
-  padding-inline-start: 2%;
-  display: flex;
-  flex-direction: column;
-}
-
-.container__header {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin: 2% 0;
+  background-color: #f8f9fd;
 }

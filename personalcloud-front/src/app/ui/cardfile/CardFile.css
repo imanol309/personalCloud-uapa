@@ -1,6 +1,6 @@
 .CardFile--Grid {
   cursor: pointer;
-  background-color: #d9d9d9;
+  background-color: #d9d9dbb6;
   width: 210px;
   height: 180px;
   display: flex;
@@ -30,7 +30,7 @@
 
 .CardFile--List {
   cursor: pointer;
-  background-color: #d9d9d9;
+  background-color: #d9d9dbb6;
   /* width: 50%; */
   height: 60px;
   display: flex;

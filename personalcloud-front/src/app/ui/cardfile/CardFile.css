@@ -1,0 +1,65 @@
+.CardFile--Grid {
+  cursor: pointer;
+  background-color: #d9d9d9;
+  width: 210px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.CardFile--Grid:hover {
+  scale: 1.06;
+}
+
+.CardFile__Box--Grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.CardFile__Icon--Grid {
+  width: 80px;
+  height: 80px;
+}
+
+.CardFile--List {
+  cursor: pointer;
+  background-color: #d9d9d9;
+  /* width: 50%; */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.CardFile--List:hover {
+  scale: 1.02;
+}
+.CardFile__Icon--List {
+  width: 40px;
+  height: 40px;
+}
+
+.CardFile__Box--List {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.CardFile__Title {
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+.CardFile__Date {
+  color: var(--color-secondary);
+}

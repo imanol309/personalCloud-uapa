@@ -5,3 +5,6 @@ export * from './cardplan/CardPlans';
 export * from './iconsocial/IconSocial';
 export * from './avatar/Avatar';
 export * from './CardTestimony/CardTestimony';
+export * from './buttonUpdate/ButtonUpdate';
+export * from './searchbox/SearchBox';
+export * from './cardfile/CardFile';

@@ -3,25 +3,59 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .FileSpaces__Title {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
 }
+
 .FileSpaces {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100vh;
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #848484;
+  --sb-size: 8px;
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  padding-inline: 2%;
+}
+
+.FileSpaces::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+.FileSpaces::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.FileSpaces::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+
 }
 
 .FileSpaces__Grid {
+  width: 100%;
   margin: 50px 0;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 8%;
+
 }
+
 .FileSpaces__List {
+  width: 100%;
   margin: 50px 0;
   display: flex;
   flex-direction: column;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 2%;
+
 }

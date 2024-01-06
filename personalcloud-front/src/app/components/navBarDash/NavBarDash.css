@@ -1,88 +1,88 @@
 .container__dash {
-    height: 100vh;
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  height: 100vh;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .container__logo {
-    width: 85%;
-    height: 15%;
-    display: flex;
-    align-items: center;
+  width: 85%;
+  height: 15%;
+  display: flex;
+  align-items: center;
 }
 
 .icon__img {
-    border-radius: 10%;
+  border-radius: 10%;
 }
 
 .Logo__Title__dash {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 5px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
 }
 
 .Logo__Title__dash--bold {
-    font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 .container__option {
-    width: 80%;
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  width: 80%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .Title__option {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    color: var(--color-secondary);
-    font-weight: var(--font-weight-regular);
-    border-radius: 5%;
-    transition: font-weight 0.3s ease;
-    padding: 15px 0px 15px 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-regular);
+  border-radius: 5%;
+  transition: font-weight 0.3s ease;
+  padding: 15px 0px 15px 15px;
 }
 
 .Title__option:hover {
-    background-color: var(--color-accent1);
-    color: var(--color-primary);
-    font-weight: var(--font-weight-semibold);
+  background-color: var(--color-accent1);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .icon__option {
-    fill: var(--color-secondary);
-    transition: fill 0.3s ease;
+  fill: var(--color-secondary);
+  transition: fill 0.3s ease;
 }
 
 .Title__option:hover .icon__option {
-    fill: #30235b;
-    font-weight: var(--font-weight-regular);
+  fill: #30235b;
+  font-weight: var(--font-weight-medium);
 }
 
 .container__unlock {
-    width: 80%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
 }
 
 .icon__update {
-    margin-bottom: 8%;
+  margin-bottom: 8%;
 }

@@ -1,0 +1,47 @@
+.SearchBox {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.SearchBox__Input {
+  background-color: transparent;
+  width: 70%;
+  height: 30px;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-xs);
+  padding: 0 10px;
+}
+
+.SearchBox__Button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 8px;
+  padding: 8px;
+  cursor: pointer;
+  gap: 5px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.SearchBox__Button:hover {
+  background-color: #d9d9d9;
+  font-weight: var(--font-weight-semibold);
+}
+
+.Icon__Grid {
+  width: 30px;
+}
+.Icon__List {
+  width: 20px;
+}
+
+.grid-icon {
+  color: var(--color-secondary);
+}

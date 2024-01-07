@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import sharp from "sharp";
 import fs from 'fs';
-
+import { join } from 'path';
 
 async function uploadFileToS3(file, fileName) {
   const typeFile = fileName.substring(fileName.length - 3)
@@ -83,22 +83,24 @@ export async function uploadFile(prevState, formData) {
     if (file.type.includes('image')) {
       const fileData = await uploadFileToS3(buffer, file.name);
       console.log(fileData.url);
-
+      // revalidatePath("/");
+      return { status: "success", message: "El archivo ha sido subido" };
     } else {
-      const filePath = 'C:/Users/18295/Desktop/CURRICULUM/' + file.name;
-      console.log(filePath)
+      const tmpPath = join('/temp', file.name);
       try {
-        fs.writeFileSync(filePath, buffer);
+        fs.writeFileSync(tmpPath, buffer);
       } catch (err) {
         console.log(err)
       }
-
-      const uploadResult = await uploadFileToS3Pdf(filePath, file.name);
+      const uploadResult = await uploadFileToS3Pdf(tmpPath, file.name);
       console.log("Resultado:", uploadResult.url);
+      // revalidatePath("/");
+      return { status: "success", message: "El archivo ha sido subido" };
     }
-
-    revalidatePath("/");
-    return { status: "success", message: "El archivo ha sido subido" };
+    // fs.unlinkSync(file);
+    // URL.revokeObjectURL(file);
+    // revalidatePath("/");
+    
   } catch (error) {
     return { status: "error", message: "No se pudo subido el archivo" };
   }

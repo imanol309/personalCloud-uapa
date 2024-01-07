@@ -15,7 +15,7 @@ const s3Client = new S3Client({
 async function uploadFileToS3(file, fileName) {
   const fileBuffer = await sharp(file)
     .jpeg({ quality: 50 })
-    .resize(800, 400)
+    // .resize(800, 400)
     .toBuffer();
 
   const params = {
@@ -57,8 +57,8 @@ export async function uploadFile(prevState, formData) {
     console.log(fileData.name);
 
     revalidatePath("/");
-    return { status: "success", message: "El archivo ha sido cargado." };
+    return { status: "success", message: "El archivo ha sido subido" };
   } catch (error) {
-    return { status: "error", message: "No se pudo cargar el archivo." };
+    return { status: "error", message: "No se pudo subido el archivo" };
   }
 }

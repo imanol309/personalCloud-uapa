@@ -6,6 +6,7 @@ import fs from 'fs';
 
 
 async function uploadFileToS3(file, fileName) {
+  const typeFile = fileName.substring(fileName.length - 3)
   const fileBuffer = await sharp(file)
     .jpeg({ quality: 50 })
     .toBuffer();
@@ -14,7 +15,7 @@ async function uploadFileToS3(file, fileName) {
     Bucket: process.env.NEXT_AWS_S3_BUCKET_NAME,
     Key: `${fileName}`,
     Body: fileBuffer,
-    ContentType: "image/jpg",
+    ContentType: `image/${typeFile}`,
   };
 
   const command = new PutObjectCommand(params);
@@ -22,7 +23,7 @@ async function uploadFileToS3(file, fileName) {
     const response = await s3Client.send(command);
     const { Key } = params;
     const url = `https://${process.env.NEXT_AWS_S3_BUCKET_NAME}.s3.${process.env.NEXT_AWS_S3_REGION}.amazonaws.com/${Key}`;
-    const type = 'jpg';
+    const type = `${typeFile}`;
     console.log("File uploaded successfully:", response);
     return {
       url,
@@ -44,12 +45,15 @@ const s3Client = new S3Client({
 
 
 async function uploadFileToS3Pdf(filePath, fileName) {
+  const typeFile = fileName.substring(fileName.length - 3)
+  const ifFile = typeFile === 'pdf' ? 'application/pdf' : typeFile === 'doc' ? 'application/msword' : typeFile === 'txt' ? 'text/plain' : 'application/pdf';
+  console.log(ifFile)
   const fileStream = fs.createReadStream(filePath);
   const params = {
     Bucket: process.env.NEXT_AWS_S3_BUCKET_NAME,
     Key: `${fileName}`,
     Body: fileStream,
-    ContentType: "application/pdf",
+    ContentType: `${ifFile}`,
   };
   const command = new PutObjectCommand(params);
   try {
@@ -68,17 +72,19 @@ async function uploadFileToS3Pdf(filePath, fileName) {
     return null;
   }
 }
-
+// Accepts pdf, txt, doc, etc.
 export async function uploadFile(prevState, formData) {
   try {
     const file = formData.get("file");
     if (file.size === 0) {
       return { status: "error", message: "Por favor seleccione un archivo." };
-
     }
     const buffer = Buffer.from(await file.arrayBuffer());
-    if (file.type === "application/pdf") {
-      console.log("Entrooo")
+    if (file.type.includes('image')) {
+      const fileData = await uploadFileToS3(buffer, file.name);
+      console.log(fileData.url);
+
+    } else {
       const filePath = 'C:/Users/18295/Desktop/CURRICULUM/' + file.name;
       console.log(filePath)
       try {
@@ -89,10 +95,8 @@ export async function uploadFile(prevState, formData) {
 
       const uploadResult = await uploadFileToS3Pdf(filePath, file.name);
       console.log("Resultado:", uploadResult.url);
-    } else {
-      const fileData = await uploadFileToS3(buffer, file.name);
-      console.log(fileData.url);
     }
+
     revalidatePath("/");
     return { status: "success", message: "El archivo ha sido subido" };
   } catch (error) {

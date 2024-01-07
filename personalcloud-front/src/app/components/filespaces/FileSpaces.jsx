@@ -1,5 +1,6 @@
 import "./FileSpaces.css";
 import { Button, CardFile } from "@/app/ui";
+import CloudFlareFile from '../cloudFlareFile/CloudFlareFile';
 
 export const FileSpaces = ({ viewMode }) => {
   const cant = 25;
@@ -9,7 +10,7 @@ export const FileSpaces = ({ viewMode }) => {
     <div className="FileSpaces">
       <div className="FileSpaces__Header">
         <h1 className="FileSpaces__Title">File Spaces</h1>
-        <Button text=" Añadir Archivos" type="filled" urlSign="#" />
+        <CloudFlareFile/>
       </div>
       <div className={viewMode ? "FileSpaces__Grid" : "FileSpaces__List"}>
         {arr.map((index) => (

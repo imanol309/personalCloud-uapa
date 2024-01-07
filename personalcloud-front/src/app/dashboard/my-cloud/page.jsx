@@ -1,7 +1,7 @@
-import "./dashboard.css";
-import NavBarDash from "../components/navBarDash/NavBarDash";
-import AllFileSpace from "../components/AllFileSpace/AllFileSpace";
-import CloudFlareFile from "../components/cloudFlareFile/CloudFlareFile";
+import "./myCloud.css";
+import NavBarDash from "../../components/navBarDash/NavBarDash";
+import AllFileSpace from "../../components/AllFileSpace/AllFileSpace";
+import CloudFlareFile from "../../components/cloudFlareFile/CloudFlareFile";
 
 function Dashboard() {
   return (

@@ -19,19 +19,19 @@ function NavBarDash() {
   const dataOptionNavBarOne = [
     {
       title: "My Cloud",
-      url: "/mycloud",
+      url: "/dashboard/mycloud",
       Icon: homeSVg,
       status: true,
     },
     {
       title: "Starred",
-      url: "/starred",
+      url: "/dashboard/starred",
       Icon: starSVg,
       status: true,
     },
     {
       title: "Trash",
-      url: "/trash",
+      url: "/dashboard/trash",
       Icon: trashSVg,
       status: true,
     },
@@ -40,13 +40,13 @@ function NavBarDash() {
   const dataOptionNavBartwo = [
     {
       title: "Help",
-      url: "/help",
+      url: "/dashboard/help",
       Icon: helpSVg,
       status: true,
     },
     {
       title: "Setting",
-      url: "/setting",
+      url: "/dashboard/setting",
       Icon: settingSVg,
       status: true,
     },

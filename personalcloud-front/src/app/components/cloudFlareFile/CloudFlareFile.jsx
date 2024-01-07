@@ -15,7 +15,7 @@ function CloudFlareFile() {
         action={formAction}
         style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}
       >
-        <input type="file" id="file" name="file" accept="images/*" className="picture-file" />
+        <input type="file" id="file" name="file" accept="*" className="picture-file" />
         <SubmitButton funct={() => toast.success(state?.message)} />
       </form>
       {state?.status && (

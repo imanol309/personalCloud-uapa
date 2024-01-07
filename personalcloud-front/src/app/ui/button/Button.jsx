@@ -5,7 +5,7 @@ export const Button = ({ text, type, urlSign }) => {
   return (
     <Link className={`button ${type}`} href={`${urlSign}`} type={type}>
       {text}
-      {/* <Link href="/dashboard">{text}</Link> */}
+      {/* <Link href="/dashboard/my-cloud">{text}</Link> */}
     </Link>
   );
 };

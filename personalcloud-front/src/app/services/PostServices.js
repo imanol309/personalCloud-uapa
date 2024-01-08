@@ -1,10 +1,12 @@
+// "use server";
+
 async function PostUser(data) {
     try {
-      const response = await fetch(`${process.env.NEXT_URL_API}/user`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${process.env.NEXT_API_KEY}` 
+          'Authorization': `${process.env.NEXT_PUBLIC_API_KEY}` 
         },
         body: JSON.stringify(data),
       });
@@ -18,11 +20,11 @@ async function PostUser(data) {
 
 async function PostFile(data) {
     try {
-      const response = await fetch(`${process.env.NEXT_URL_API}/file`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/file`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${process.env.NEXT_API_KEY}` 
+          "Authorization": `${process.env.NEXT_PUBLIC_API_KEY}`
         },
         body: JSON.stringify(data),
       });

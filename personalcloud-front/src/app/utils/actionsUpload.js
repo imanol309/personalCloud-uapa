@@ -67,6 +67,7 @@ async function uploadFileToS3Pdf(filePath, fileName) {
       type,
       name: fileName
     };
+
   } catch (err) {
     console.log("Error uploading PDF: ", err);
     return null;
@@ -84,7 +85,7 @@ export async function uploadFile(prevState, formData) {
       const fileData = await uploadFileToS3(buffer, file.name);
       console.log(fileData.url);
       revalidatePath("/");
-      return { status: "success", message: "El archivo ha sido subido" };
+      return { status: "success", message: "El archivo ha sido subido", data: fileData };
     } else {
       const tmpPath = join('/temp', file.name);
       try {
@@ -95,7 +96,7 @@ export async function uploadFile(prevState, formData) {
       const uploadResult = await uploadFileToS3Pdf(tmpPath, file.name);
       console.log("Resultado:", uploadResult.url);
       revalidatePath("/");
-      return { status: "success", message: "El archivo ha sido subido" };
+      return { status: "success", message: "El archivo ha sido subido", data: uploadResult };
     }
   } catch (error) {
     return { status: "error", message: "No se pudo subido el archivo" };

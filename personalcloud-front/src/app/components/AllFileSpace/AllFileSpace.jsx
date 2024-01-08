@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { SearchBox } from "../../ui/searchbox/SearchBox";
 import { FileSpaces } from "../filespaces/FileSpaces";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { GetFiles, GetFilesId } from "../../services/GetServices";
+import { getDataFileForUser } from "../../services/GetServices";
 
 function AllFileSpace() {
   const users = useUser();
@@ -14,10 +14,8 @@ function AllFileSpace() {
   const [hoverActivatedlist, sethoverActivatedlist] = useState(false);
 
   useEffect(() => {
-    
     signPhp();
-
-  }, [users.user?.id]);
+  }, [users?.user?.id]);
 
   const convertToGrid = () => {
     setViewMode(true);
@@ -32,21 +30,14 @@ function AllFileSpace() {
   };
 
   const signPhp = async () => {
-    const dataFile = await GetFilesId("user_2aEE3bGZaSlzbKHcQHdGHrFRbiN");
-    if(dataFile !== null) {
-      setDataFile(dataFile)
-      console.log("entro")
+    const dataFiles = await getDataFileForUser(users?.user?.id);
+    if(dataFiles) {
+      setDataFile(dataFiles)
+      console.log(dataFiles)
     } else {
       console.log("nadaaa")
     }
   };
-
-  console.log(
-    users.user?.id,
-    users.user?.fullName,
-    users.user?.imageUrl,
-    users.user?.primaryEmailAddress?.emailAddress
-  );
 
   return (
     <div className="container__cloud">
@@ -59,7 +50,7 @@ function AllFileSpace() {
         />
         <UserButton afterSignOutUrl="/" />
       </div>
-      <FileSpaces viewMode={viewMode} />
+      <FileSpaces viewMode={viewMode} dataFile={dataFile} />
     </div>
   );
 }

@@ -1,14 +1,36 @@
 "use client";
 import { useFormState } from "react-dom";
-import { useState } from "react";
 import { uploadFile } from "../../utils/actionsUpload";
 import { SubmitButton } from "../submitButton/SubmitButton";
 // import { Toaster, toast } from "sonner";
 import "./CloudFlareFiel.css";
+import { useEffect } from "react";
+import { useUser } from "@clerk/nextjs";
+import { PostFile } from "../../services/PostServices";
+
 const initialState = { message: null };
 
 function CloudFlareFile() {
+  const users = useUser();
   const [state, formAction] = useFormState(uploadFile, initialState);
+
+  const updateFile = async () => {
+    const body = {
+      name_file: state?.data?.name,
+      type: state?.data?.type,
+      link: state?.data?.url,
+      user_id: users?.user?.id,
+    };
+    const data = await PostFile(body);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    if (state.status === "success") {
+      updateFile();
+    }
+  }, [state?.status]);
+  
   return (
     <div className="container__input">
       <form

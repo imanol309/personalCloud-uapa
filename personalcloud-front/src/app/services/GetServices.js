@@ -1,9 +1,9 @@
-"use server";
+// "use server";
 async function GetFiles() {
-    const response = await fetch(`${process.env.NEXT_URL_API}/file`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/file`, {
         headers: {
             "Content-Type": "application/json",
-            'api_key': `${process.env.NEXT_API_KEY}`
+            "Authorization": `${process.env.NEXT_PUBLIC_API_KEY}`
         },
     });
     const files = await response.json();
@@ -12,20 +12,20 @@ async function GetFiles() {
 
 }
 
-async function GetFilesId(id) {
-    const response = await fetch(`${process.env.NEXT_URL_API}/file/${id}`, {
+async function getDataFileForUser(id) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/users/${id}`, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `${process.env.NEXT_API_KEY}`
+            "Authorization": `${process.env.NEXT_PUBLIC_API_KEY}`
         },
     });
     const fileId = await response.json();
-    console.log(fileId);
+    // console.log(fileId);
 
     return { fileId }
 }
 
 export {
     GetFiles,
-    GetFilesId
+    getDataFileForUser
 }

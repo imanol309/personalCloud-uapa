@@ -79,13 +79,6 @@ switch ($metodo) {
         break;
 }
 
-// function validateAPIKey()
-// {
-//     if ($_GET['api_key'] != $_ENV["API_KEY"]) {
-//         die('API Key inválida');
-//     }
-// }
-
 function validateAPIKey()
 {
     // Obtener encabezado HTTP de Authorization
@@ -110,7 +103,7 @@ function getData($conexion, $table)
         }
         echo json_encode($datos);
     } else {
-        echo json_encode(null);
+        echo json_encode([]);
     }
 }
 
@@ -126,14 +119,15 @@ function getDataId($conexion, $table, $id)
         }
         echo json_encode($datos);
     } else {
-        echo json_encode(null);
+        echo json_encode([]);
     }
 }
 
 function getDataFileForUser($conexion, $id)
 {
     validateAPIKey();
-    $sql = "SELECT * FROM file WHERE id IN (SELECT id_file FROM users WHERE id = '$id')";
+    $sql = "SELECT * FROM file WHERE user_id IN (SELECT id FROM users WHERE id = '$id')";
+    // $sql = "SELECT * FROM file JOIN users u ON f.user_id = u.id WHERE u.id = '$id'";
     $result = $conexion->query($sql);
     if ($result->num_rows > 0) {
         $datos = array();
@@ -142,25 +136,28 @@ function getDataFileForUser($conexion, $id)
         }
         echo json_encode($datos);
     }
+    else {
+        echo json_encode([]);
+    }
 }
 
 function PostDataUser($conexion, $table)
 {
-    // validateAPIKey();
+    validateAPIKey();
     $fechaActual = new DateTime();
     $fechaActual = $fechaActual->format('Y-m-d');
     $dato = json_decode(file_get_contents("php://input"), true);
     $body = [
+        'id' => $dato['id'],
         'name' => $dato['name'],
         'date' => $dato['date'],
         'profile_img' => $dato['profile_img'],
         'profile_tips' => $dato['profile_tips'],
         'status' => $dato['status'],
-        'id_file' => $dato['id_file'],
         'access_token' => $dato['access_token'],
     ];
-    $sql = "INSERT INTO users(name, date, profile_img, profile_tips, status, id_file) 
-    VALUES ('{$body['name']}','{$fechaActual}', '{$body['profile_img']}', '{$body['profile_tips']}', '{$body['status']}',  '{$body['id_file']}')";
+    $sql = "INSERT INTO users(id, name, date, profile_img, profile_tips, status) 
+    VALUES ('{$body['id']}','{$body['name']}','{$fechaActual}', '{$body['profile_img']}', '{$body['profile_tips']}', '{$body['status']}')";
     $result = $conexion->query($sql);
 
     if ($result) {
@@ -179,14 +176,14 @@ function PostDataFile($conexion, $table)
 
     $dato = json_decode(file_get_contents("php://input"), true);
     $body = [
-        'id' => $dato['id'],
         'name_file' => $dato['name_file'],
         'type' => $dato['type'],
         'link' => $dato['link'],
         'date' => $dato['date'],
+        'user_id' => $dato['user_id'],
     ];
-    $sql = "INSERT INTO file(id, name_file, type, link, date) 
-    VALUES ('{$body['id']}', '{$body['name_file']}', '{$body['type']}', '{$body['link']}',  '{$fechaActual}')";
+    $sql = "INSERT INTO file(name_file, type, link, date, user_id) 
+    VALUES ('{$body['name_file']}', '{$body['type']}', '{$body['link']}',  '{$fechaActual}', '{$body['user_id']}')";
     $result = $conexion->query($sql);
 
     if ($result) {

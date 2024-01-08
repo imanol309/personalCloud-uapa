@@ -6,6 +6,14 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $conexion = new mysqli($_ENV["MYSQLHOST"], $_ENV["MYSQLUSER"], $_ENV["MYSQLPASSWORD"], $_ENV["MYSQLDATABASE"]);
+// Permitir solicitudes CORS desde este origen
+header("Access-Control-Allow-Origin: http://localhost:3000");
+
+// Permitir los métodos CORS necesarios
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+
+// Permitir encabezados CORS
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 if ($conexion->connect_error) {
     die("Error en la conexion de la base de datos" . $conexion->connect_error);
@@ -71,11 +79,23 @@ switch ($metodo) {
         break;
 }
 
+// function validateAPIKey()
+// {
+//     if ($_GET['api_key'] != $_ENV["API_KEY"]) {
+//         die('API Key inválida');
+//     }
+// }
+
 function validateAPIKey()
 {
-    if ($_GET['api_key'] != $_ENV["API_KEY"]) {
+    // Obtener encabezado HTTP de Authorization
+    $authorization = $_SERVER['HTTP_AUTHORIZATION'];
+
+    // Validar encabezado
+    if ($authorization != $_ENV["API_KEY"]) {
         die('API Key inválida');
     }
+
 }
 
 function getData($conexion, $table)
@@ -89,6 +109,8 @@ function getData($conexion, $table)
             $datos[] = $fila;
         }
         echo json_encode($datos);
+    } else {
+        echo json_encode(null);
     }
 }
 
@@ -103,6 +125,8 @@ function getDataId($conexion, $table, $id)
             $datos[] = $fila;
         }
         echo json_encode($datos);
+    } else {
+        echo json_encode(null);
     }
 }
 
@@ -122,13 +146,12 @@ function getDataFileForUser($conexion, $id)
 
 function PostDataUser($conexion, $table)
 {
-    validateAPIKey();
+    // validateAPIKey();
     $fechaActual = new DateTime();
     $fechaActual = $fechaActual->format('Y-m-d');
     $dato = json_decode(file_get_contents("php://input"), true);
     $body = [
         'name' => $dato['name'],
-        'password' => $dato['password'],
         'date' => $dato['date'],
         'profile_img' => $dato['profile_img'],
         'profile_tips' => $dato['profile_tips'],
@@ -136,8 +159,8 @@ function PostDataUser($conexion, $table)
         'id_file' => $dato['id_file'],
         'access_token' => $dato['access_token'],
     ];
-    $sql = "INSERT INTO users(name, password, date, profile_img, profile_tips, status, id_file) 
-    VALUES ('{$body['name']}', '{$body['password']}', '{$fechaActual}', '{$body['profile_img']}', '{$body['profile_tips']}', '{$body['status']}',  '{$body['id_file']}', '{$body['access_token']}')";
+    $sql = "INSERT INTO users(name, date, profile_img, profile_tips, status, id_file) 
+    VALUES ('{$body['name']}','{$fechaActual}', '{$body['profile_img']}', '{$body['profile_tips']}', '{$body['status']}',  '{$body['id_file']}')";
     $result = $conexion->query($sql);
 
     if ($result) {
@@ -157,13 +180,13 @@ function PostDataFile($conexion, $table)
     $dato = json_decode(file_get_contents("php://input"), true);
     $body = [
         'id' => $dato['id'],
+        'name_file' => $dato['name_file'],
         'type' => $dato['type'],
         'link' => $dato['link'],
-        'creation_date' => $dato['creation_date'],
-        'name_file' => $dato['name_file'],
+        'date' => $dato['date'],
     ];
-    $sql = "INSERT INTO file(id, type, link, creation_date) 
-    VALUES ('{$body['id']}', '{$body['type']}', '{$body['link']}',  '{$fechaActual}', '{$body['name_file']}')";
+    $sql = "INSERT INTO file(id, name_file, type, link, date) 
+    VALUES ('{$body['id']}', '{$body['name_file']}', '{$body['type']}', '{$body['link']}',  '{$fechaActual}')";
     $result = $conexion->query($sql);
 
     if ($result) {
@@ -181,13 +204,12 @@ function updateDataUser($conexion, $id)
     $dato = json_decode(file_get_contents("php://input"), true);
     $body = [
         'name' => $dato['name'],
-        'password' => $dato['password'],
         'profile_tips' => $dato['profile_tips'],
         'status' => $dato['status'],
         'access_token' => $dato['access_token'],
     ];
-    $sql = "UPDATE users SET name = '{$body['name']}', password = '{$body['password']}', 
-    profile_tips = '{$body['profile_tips']}', status = '{$body['status']}', 
+    $sql = "UPDATE users SET name = '{$body['name']}', profile_tips = '{$body['profile_tips']}', 
+    status = '{$body['status']}', 
     access_token = '{$body['access_token']}' WHERE id = $id";
     $result = $conexion->query($sql);
 

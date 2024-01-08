@@ -83,7 +83,7 @@ export async function uploadFile(prevState, formData) {
     if (file.type.includes('image')) {
       const fileData = await uploadFileToS3(buffer, file.name);
       console.log(fileData.url);
-      // revalidatePath("/");
+      revalidatePath("/");
       return { status: "success", message: "El archivo ha sido subido" };
     } else {
       const tmpPath = join('/temp', file.name);
@@ -94,13 +94,9 @@ export async function uploadFile(prevState, formData) {
       }
       const uploadResult = await uploadFileToS3Pdf(tmpPath, file.name);
       console.log("Resultado:", uploadResult.url);
-      // revalidatePath("/");
+      revalidatePath("/");
       return { status: "success", message: "El archivo ha sido subido" };
     }
-    // fs.unlinkSync(file);
-    // URL.revokeObjectURL(file);
-    // revalidatePath("/");
-    
   } catch (error) {
     return { status: "error", message: "No se pudo subido el archivo" };
   }

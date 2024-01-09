@@ -15,7 +15,7 @@ export const CardFile = ({ viewMode, data }) => {
         <p className="CardFile__Title">{data.name_file}</p>
       </div>
       <p className="CardFile__Date">{data.date}</p>
-      <Image src={moreIcon} alt="Icon More" />
+      <Image src={moreIcon} alt="Icon More" height={"auto"} width={"auto"}/>
     </div>
   );
 };

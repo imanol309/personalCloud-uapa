@@ -5,7 +5,7 @@ import facebook from '../../../../public/icons/facebook.png';
 export const Avatar = () => {
   return (
     <div className='Avatar'>
-      <Image src={facebook} alt="facebook"  className='Avatar__Image' />
+      <Image src={facebook} alt="facebook"  className='Avatar__Image' height={"auto"} width={"auto"} />
     </div>
   );
 };

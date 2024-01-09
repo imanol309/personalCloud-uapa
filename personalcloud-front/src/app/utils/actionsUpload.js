@@ -5,6 +5,14 @@ import sharp from "sharp";
 import fs from 'fs';
 import { join } from 'path';
 
+const s3Client = new S3Client({
+  region: process.env.NEXT_AWS_S3_REGION,
+  credentials: {
+    accessKeyId: process.env.NEXT_AWS_S3_ACCESS_KEY_ID,
+    secretAccessKey: process.env.NEXT_AWS_S3_SECRET_ACCESS_KEY,
+  },
+});
+
 async function uploadFileToS3(file, fileName) {
   const typeFile = fileName.substring(fileName.length - 3)
   const fileBuffer = await sharp(file)
@@ -35,15 +43,6 @@ async function uploadFileToS3(file, fileName) {
   }
 }
 
-const s3Client = new S3Client({
-  region: process.env.NEXT_AWS_S3_REGION,
-  credentials: {
-    accessKeyId: process.env.NEXT_AWS_S3_ACCESS_KEY_ID,
-    secretAccessKey: process.env.NEXT_AWS_S3_SECRET_ACCESS_KEY,
-  },
-});
-
-
 async function uploadFileToS3Pdf(filePath, fileName) {
   const typeFile = fileName.substring(fileName.length - 3)
   const ifFile = typeFile === 'pdf' ? 'application/pdf' : typeFile === 'doc' ? 'application/msword' : typeFile === 'txt' ? 'text/plain' : 'application/pdf';
@@ -73,7 +72,7 @@ async function uploadFileToS3Pdf(filePath, fileName) {
     return null;
   }
 }
-// Accepts pdf, txt, doc, etc.
+// Accepts pdf, txt, doc, image/*
 export async function uploadFile(prevState, formData) {
   try {
     const file = formData.get("file");
@@ -85,7 +84,7 @@ export async function uploadFile(prevState, formData) {
       const fileData = await uploadFileToS3(buffer, file.name);
       console.log(fileData.url);
       revalidatePath("/");
-      return { status: "success", message: "El archivo ha sido subido", data: fileData };
+      return { status: "success", message: "El archivo ha sido subido", data: fileData, change: Math.random() };
     } else {
       const tmpPath = join('/temp', file.name);
       try {
@@ -96,7 +95,7 @@ export async function uploadFile(prevState, formData) {
       const uploadResult = await uploadFileToS3Pdf(tmpPath, file.name);
       console.log("Resultado:", uploadResult.url);
       revalidatePath("/");
-      return { status: "success", message: "El archivo ha sido subido", data: uploadResult };
+      return { status: "success", message: "El archivo ha sido subido", data: uploadResult, change: Math.random() };
     }
   } catch (error) {
     return { status: "error", message: "No se pudo subido el archivo" };

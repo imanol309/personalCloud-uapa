@@ -19,7 +19,7 @@ export const Hero = () => {
         <Button text="Empezar" type="rectangle" />
       </div>
       <div className="Hero__Section">
-        <Image src={fill} alt="Picture of the author" className="Hero__Image" />
+        <Image src={fill} alt="Picture of the author" className="Hero__Image" height={"auto"} width={"auto"} />
       </div>
     </div>
   );

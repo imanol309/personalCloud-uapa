@@ -6,8 +6,7 @@ import Seach from "../../components/Seach/Seach";
 export const SearchBox = ({
   convertToGrid,
   convertToList,
-  hoverActivatedGrid,
-  hoverActivatedlist,
+  hoverActivate
 }) => {
   return (
     <div className="SearchBox">
@@ -15,24 +14,36 @@ export const SearchBox = ({
       <div className="container__button">
         <button
           className={
-            hoverActivatedGrid
+            hoverActivate
               ? "SearchBox__Button Hover__Activated"
               : "SearchBox__Button"
           }
           onClick={convertToGrid}
         >
-          <Image src={gripIcon} className="Icon__Grid" alt="GridIcon" />
+          <Image
+            src={gripIcon}
+            className="Icon__Grid"
+            alt="GridIcon"
+            height={"auto"}
+            width={"auto"}
+          />
           Grid
         </button>
         <button
           className={
-            hoverActivatedlist
-              ? "SearchBox__Button Hover__Activated"
-              : "SearchBox__Button"
+            hoverActivate
+              ? "SearchBox__Button"
+              : "SearchBox__Button Hover__Activated"
           }
           onClick={convertToList}
         >
-          <Image src={listIcon} className="Icon__List" alt="ListIcon" />
+          <Image
+            src={listIcon}
+            className="Icon__List"
+            alt="ListIcon"
+            height={"auto"}
+            width={"auto"}
+          />
           List
         </button>
       </div>

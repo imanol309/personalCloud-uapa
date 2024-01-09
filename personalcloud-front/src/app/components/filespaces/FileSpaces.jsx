@@ -3,7 +3,6 @@ import { CardFile } from "@/app/ui";
 import CloudFlareFile from "../cloudFlareFile/CloudFlareFile";
 
 export const FileSpaces = ({ viewMode, dataFile }) => {
-  console.log(dataFile)
   return (
     <div className="FileSpaces">
       <div className="FileSpaces__Header">

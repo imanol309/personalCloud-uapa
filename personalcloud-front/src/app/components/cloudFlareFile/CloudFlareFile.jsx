@@ -2,18 +2,24 @@
 import { useFormState } from "react-dom";
 import { uploadFile } from "../../utils/actionsUpload";
 import { SubmitButton } from "../submitButton/SubmitButton";
-// import { Toaster, toast } from "sonner";
 import "./CloudFlareFiel.css";
 import { useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { PostFile } from "../../services/PostServices";
-
+import { useContext, createContext } from "react";
 const initialState = { message: null };
+import {UserContext} from '../AllFileSpace/AllFileSpace';
 
 function CloudFlareFile() {
+  const {updateDate, toggleTheme} = useContext(UserContext);
   const users = useUser();
   const [state, formAction] = useFormState(uploadFile, initialState);
 
+  console.log(updateDate)
+
+  const handleButtonClick = () => {
+    toggleTheme();
+  };
   const updateFile = async () => {
     const body = {
       name_file: state?.data?.name,
@@ -22,14 +28,17 @@ function CloudFlareFile() {
       user_id: users?.user?.id,
     };
     const data = await PostFile(body);
-    console.log(data);
+    if(data) {
+      console.log(data.result);
+      handleButtonClick()
+    }
   };
 
   useEffect(() => {
     if (state.status === "success") {
       updateFile();
     }
-  }, [state?.status]);
+  }, [state?.change]);
   
   return (
     <div className="container__input">
@@ -47,7 +56,6 @@ function CloudFlareFile() {
         <SubmitButton />
       </form>
       {state?.status && (
-        // <Toaster position="top-right" expand={false} richColors />
         <div className={`state-message ${state?.status}`}>{state?.message}</div>
       )}
     </div>

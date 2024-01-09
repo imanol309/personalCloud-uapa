@@ -1,4 +1,3 @@
-// "use server";
 async function GetFiles() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/file`, {
         headers: {
@@ -20,7 +19,6 @@ async function GetUserId(id) {
         },
     });
     const users = await response.json();
-    console.log(users);
     return { users }
 
 }

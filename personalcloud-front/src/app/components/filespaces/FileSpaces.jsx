@@ -3,7 +3,7 @@ import { CardFile } from "@/app/ui";
 import CloudFlareFile from "../cloudFlareFile/CloudFlareFile";
 
 export const FileSpaces = ({ viewMode, dataFile }) => {
-  // console.log(dataFile)
+  console.log(dataFile)
   return (
     <div className="FileSpaces">
       <div className="FileSpaces__Header">
@@ -11,10 +11,10 @@ export const FileSpaces = ({ viewMode, dataFile }) => {
         <CloudFlareFile />
       </div>
       <div className={viewMode ? "FileSpaces__Grid" : "FileSpaces__List"}>
-        {!dataFile?.fileId ? (
+        {!dataFile ? (
           <h4>Cargado datos</h4>
         ) : (
-          dataFile?.fileId.map((data, index) => (
+          dataFile.map((data, index) => (
             <CardFile viewMode={viewMode} key={index} data={data} />
           ))
         )}

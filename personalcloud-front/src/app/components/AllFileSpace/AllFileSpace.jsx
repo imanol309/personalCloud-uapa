@@ -16,7 +16,7 @@ function AllFileSpace() {
 
   useEffect(() => {
     signPhp();
-  }, [users.user?.id]);
+  }, [users?.user?.id]);
 
   const convertToGrid = () => {
     setViewMode(true);
@@ -31,21 +31,23 @@ function AllFileSpace() {
   };
 
   const signPhp = async () => {
-    // const bodyUser= {
-    //   name: users?.data?.name,
-    //   type: state?.data?.type,
-    //   link: state?.data?.url,
-    //   user_id: users?.user?.id,
-    // };
+    const bodyUser = {
+      id: users?.user?.id,
+      name: users?.user?.fullName,
+      profile_img: users?.user?.imageUrl,
+      profile_tips: "free",
+      status: true,
+    };
+
     const dataFiles = await getDataFileForUser(users?.user?.id);
     if (dataFiles.fileId.lenght > 0) {
-      setDataFile(dataFiles);
-      console.log(dataFiles.fileId);
+      setDataFile(dataFiles.fileId);
     } else {
       const usersId = await GetUserId(users.user?.id);
-      if (usersId.users.lenght < 0) {
-        console.log(users.user)
-        // const userLogin = await PostUser()
+      if (usersId.users[0] === undefined) {
+        console.log(usersId.users[0])
+        const userLogin = await PostUser(bodyUser)
+        console.log(userLogin)
       } else {
         console.log("El usuario esta Logeado");
       }

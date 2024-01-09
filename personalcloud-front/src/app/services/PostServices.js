@@ -1,8 +1,6 @@
-// "use server";
-
 async function PostUser(data) {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/user`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

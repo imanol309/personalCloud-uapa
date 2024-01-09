@@ -9,6 +9,19 @@ async function GetFiles() {
     const files = await response.json();
     console.log(files);
     return { files }
+}
+
+
+async function GetUserId(id) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/usersId/${id}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `${process.env.NEXT_PUBLIC_API_KEY}`
+        },
+    });
+    const users = await response.json();
+    console.log(users);
+    return { users }
 
 }
 
@@ -20,12 +33,11 @@ async function getDataFileForUser(id) {
         },
     });
     const fileId = await response.json();
-    // console.log(fileId);
-
     return { fileId }
 }
 
 export {
     GetFiles,
+    GetUserId,
     getDataFileForUser
 }

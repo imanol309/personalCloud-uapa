@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { SearchBox } from "../../ui/searchbox/SearchBox";
 import { FileSpaces } from "../filespaces/FileSpaces";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { getDataFileForUser } from "../../services/GetServices";
+import { GetUserId, getDataFileForUser } from "../../services/GetServices";
+import { PostUser } from "../../services/PostServices";
 
 function AllFileSpace() {
   const users = useUser();
@@ -15,7 +16,7 @@ function AllFileSpace() {
 
   useEffect(() => {
     signPhp();
-  }, [users?.user?.id]);
+  }, [users.user?.id]);
 
   const convertToGrid = () => {
     setViewMode(true);
@@ -30,12 +31,24 @@ function AllFileSpace() {
   };
 
   const signPhp = async () => {
+    // const bodyUser= {
+    //   name: users?.data?.name,
+    //   type: state?.data?.type,
+    //   link: state?.data?.url,
+    //   user_id: users?.user?.id,
+    // };
     const dataFiles = await getDataFileForUser(users?.user?.id);
-    if(dataFiles) {
-      setDataFile(dataFiles)
-      console.log(dataFiles)
+    if (dataFiles.fileId.lenght > 0) {
+      setDataFile(dataFiles);
+      console.log(dataFiles.fileId);
     } else {
-      console.log("nadaaa")
+      const usersId = await GetUserId(users.user?.id);
+      if (usersId.users.lenght < 0) {
+        console.log(users.user)
+        // const userLogin = await PostUser()
+      } else {
+        console.log("El usuario esta Logeado");
+      }
     }
   };
 

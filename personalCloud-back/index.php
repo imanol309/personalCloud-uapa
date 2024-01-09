@@ -41,6 +41,12 @@ switch ($metodo) {
             } else {
                 getData($conexion, 'users');
             }
+        } else if ($params[1] === 'usersId') {
+            if ($params[2]) {
+                getDataId($conexion, 'users', $params[2]);
+            } else {
+                echo 'No existe ese metodo';
+            }
         } else if ($params[1] == 'file') {
             getData($conexion, 'file');
         } else {
@@ -110,7 +116,7 @@ function getData($conexion, $table)
 function getDataId($conexion, $table, $id)
 {
     validateAPIKey();
-    $sql = "SELECT * FROM '$table' id = '$id'";
+    $sql = "SELECT * FROM $table WHERE id = '$id'";
     $result = $conexion->query($sql);
     if ($result->num_rows > 0) {
         $datos = array();
@@ -135,8 +141,7 @@ function getDataFileForUser($conexion, $id)
             $datos[] = $fila;
         }
         echo json_encode($datos);
-    }
-    else {
+    } else {
         echo json_encode([]);
     }
 }

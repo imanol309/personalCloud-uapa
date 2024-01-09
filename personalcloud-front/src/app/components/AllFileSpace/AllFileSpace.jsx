@@ -64,9 +64,6 @@ function AllFileSpace() {
             convertToGrid={convertToGrid}
             convertToList={convertToList}
             hoverActivate={hoverActivate}
-
-            hoverActivatedGrid={hoverActivatedGrid}
-            hoverActivatedlist={hoverActivatedlist}
           />
           <UserButton afterSignOutUrl="/" />
         </div>

@@ -46,7 +46,8 @@ function AllFileSpace() {
     setDataFile(dataFiles.fileId.reverse());
     if (dataFiles.fileId?.lenght === undefined) {
       const usersId = await GetUserId(users.user?.id);
-      if (usersId.users[0]?.lenght !== undefined) {
+      console.log(usersId.users[0]?.lenght !== undefined)
+      if (usersId.users[0]?.lenght === undefined) {
         const userLogin = await PostUser(bodyUser);
         console.log("entroo", userLogin);
       } else {

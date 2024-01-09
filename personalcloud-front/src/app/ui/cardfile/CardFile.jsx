@@ -1,9 +1,11 @@
+"use client"
 import './CardFile.css';
 import iconPdf from '../../../../public/icons/type/iconPdf.png';
 import Image from 'next/image';
 import moreIcon from '../../../../public/icons/icons8-más-30.png';
 
 export const CardFile = ({ viewMode, data }) => {
+  console.log(data)
   return (
     <div className={viewMode ? 'CardFile--Grid' : 'CardFile--List'}>
       <div className={viewMode ? 'CardFile__Box--Grid' : 'CardFile__Box--List'}>

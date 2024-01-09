@@ -4,30 +4,29 @@ CREATE DATABASE personalcloud;
 
 -- Crear la table de usuarios para guardar los usuarios
 CREATE TABLE `users` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `email` text DEFAULT NULL,
-  `password` text,
+  `email` text,
   `date` date DEFAULT NULL,
   `profile_img` text,
   `profile_tips` text,
   `status` tinyint(1) DEFAULT NULL,
-  `id_file` int DEFAULT NULL,
-  `access_token ` text DEFAULT NULL,
+  `access_token` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `id_file_unique` (`id_file`)
+  UNIQUE KEY `id` (`id`)
 )
 
 -- Crear tabla de file para guardar los archivos 
 CREATE TABLE `file` (
-  `id` int NOT NULL,
-  `name_file` text DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name_file` text,
   `type` varchar(255) DEFAULT NULL,
   `link` text,
   `date` date DEFAULT NULL,
+  `user_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id_file`)
+  KEY `fk_user_id` (`user_id`),
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 )
 
 -- Script sql para agregar 10 usuarios y valla probando

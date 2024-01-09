@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="container__sign">
       <NavBarSign />
-      <SignIn afterSignInUrl="/dashboard" />{" "}
+      <SignIn afterSignInUrl="/dashboard/my-cloud" />{" "}
     </div>
   );
 }

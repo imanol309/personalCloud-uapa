@@ -3,7 +3,7 @@ import iconPdf from '../../../../public/icons/type/iconPdf.png';
 import Image from 'next/image';
 import moreIcon from '../../../../public/icons/icons8-más-30.png';
 
-export const CardFile = ({ viewMode }) => {
+export const CardFile = ({ viewMode, data }) => {
   return (
     <div className={viewMode ? 'CardFile--Grid' : 'CardFile--List'}>
       <div className={viewMode ? 'CardFile__Box--Grid' : 'CardFile__Box--List'}>
@@ -12,9 +12,9 @@ export const CardFile = ({ viewMode }) => {
           className={viewMode ? 'CardFile__Icon--Grid' : 'CardFile__Icon--List'}
           alt="Icon Image"
         />
-        <p className="CardFile__Title">Titulo de archivo</p>
+        <p className="CardFile__Title">{data.name_file}</p>
       </div>
-      <p className="CardFile__Date">Enero 15, 2024</p>
+      <p className="CardFile__Date">{data.date}</p>
       <Image src={moreIcon} alt="Icon More" />
     </div>
   );

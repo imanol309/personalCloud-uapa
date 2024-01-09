@@ -1,20 +1,23 @@
 import "./FileSpaces.css";
-import { Button, CardFile } from "@/app/ui";
+import { CardFile } from "@/app/ui";
+import CloudFlareFile from "../cloudFlareFile/CloudFlareFile";
 
-export const FileSpaces = ({ viewMode }) => {
-  const cant = 25;
-  const arr = Array.from({ length: cant }, (_, i) => i);
-  
+export const FileSpaces = ({ viewMode, dataFile }) => {
+  console.log(dataFile)
   return (
     <div className="FileSpaces">
       <div className="FileSpaces__Header">
         <h1 className="FileSpaces__Title">File Spaces</h1>
-        <Button text=" Añadir Archivos" type="filled" urlSign="#" />
+        <CloudFlareFile />
       </div>
       <div className={viewMode ? "FileSpaces__Grid" : "FileSpaces__List"}>
-        {arr.map((index) => (
-          <CardFile viewMode={viewMode} key={index} />
-        ))}
+        {!dataFile ? (
+          <h4>Cargado datos</h4>
+        ) : (
+          dataFile.map((data, index) => (
+            <CardFile viewMode={viewMode} key={index} data={data} />
+          ))
+        )}
       </div>
     </div>
   );

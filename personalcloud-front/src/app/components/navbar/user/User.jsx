@@ -7,7 +7,7 @@ function user() {
   const { user } = useUser();
   
   return user ? (
-    <Button text="My Cloud" type="outline" urlSign="/dashboard" />
+    <Button text="My Cloud" type="outline" urlSign="/dashboard/my-cloud" />
   ) : (
     <>
       <Button text="Iniciar sesion" type="clean" urlSign="/sign-in" />

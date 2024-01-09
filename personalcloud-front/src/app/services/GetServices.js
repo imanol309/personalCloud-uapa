@@ -1,3 +1,4 @@
+// "use server"
 async function GetFiles() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/file`, {
         headers: {

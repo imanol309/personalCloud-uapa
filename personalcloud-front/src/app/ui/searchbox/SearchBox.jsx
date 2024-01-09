@@ -21,7 +21,13 @@ export const SearchBox = ({
           }
           onClick={convertToGrid}
         >
-          <Image src={gripIcon} className="Icon__Grid" alt="GridIcon" />
+          <Image
+            src={gripIcon}
+            className="Icon__Grid"
+            alt="GridIcon"
+            height={"auto"}
+            width={"auto"}
+          />
           Grid
         </button>
         <button
@@ -32,7 +38,13 @@ export const SearchBox = ({
           }
           onClick={convertToList}
         >
-          <Image src={listIcon} className="Icon__List" alt="ListIcon" />
+          <Image
+            src={listIcon}
+            className="Icon__List"
+            alt="ListIcon"
+            height={"auto"}
+            width={"auto"}
+          />
           List
         </button>
       </div>

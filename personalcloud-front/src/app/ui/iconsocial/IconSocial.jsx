@@ -7,13 +7,31 @@ export const IconSocial = ({ type }) => {
   return (
     <>
       <div className="IconSocial">
-        <Image src={facebook} alt="facebook" className="IconSocial__Logo" />
+        <Image
+          src={facebook}
+          alt="facebook"
+          className="IconSocial__Logo"
+          height={"auto"}
+          width={"auto"}
+        />
       </div>
       <div className="IconSocial">
-        <Image src={instagram} alt="instagram" className="IconSocial__Logo" />
+        <Image
+          src={instagram}
+          alt="instagram"
+          className="IconSocial__Logo"
+          height={"auto"}
+          width={"auto"}
+        />
       </div>
       <div className="IconSocial">
-        <Image src={gorjeo} alt="gorjeo" className="IconSocial__Logo" />
+        <Image
+          src={gorjeo}
+          alt="gorjeo"
+          className="IconSocial__Logo "
+          height={"auto"}
+          width={"auto"}
+        />
       </div>
     </>
   );

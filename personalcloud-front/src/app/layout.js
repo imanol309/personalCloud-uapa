@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="es">
-        <Head>
+        <Head >
           <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
           <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
           <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           <meta name="msapplication-TileColor" content="#30235b" />
           <meta name="theme-color" content="#ffffff"></meta>
         </Head>
-        <body className={`${rubik.className} antialiased page`}>{children}</body>
+        <body className={`${rubik.className} antialiased page`} suppressHydrationWarning={true}>{children}</body>
       </html>
     </ClerkProvider>
   );

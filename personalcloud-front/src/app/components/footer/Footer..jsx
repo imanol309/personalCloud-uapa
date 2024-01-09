@@ -1,7 +1,5 @@
 import { Logo } from "@/app/ui";
 import "./Footer.css";
-import Image from "next/image";
-import fill from "../../../../public/icons/fill.png";
 import { IconSocial } from "@/app/ui";
 
 const products = [

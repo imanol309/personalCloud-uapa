@@ -16,7 +16,7 @@ function AllFileSpace() {
 
   useEffect(() => {
     signPhp();
-  }, [users?.user?.id]);
+  }, [users.user?.id]);
 
   const convertToGrid = () => {
     setViewMode(true);
@@ -38,18 +38,15 @@ function AllFileSpace() {
       profile_tips: "free",
       status: true,
     };
-
     const dataFiles = await getDataFileForUser(users?.user?.id);
-    if (dataFiles.fileId.lenght > 0) {
-      setDataFile(dataFiles.fileId);
-    } else {
+    setDataFile(dataFiles.fileId);
+    if (dataFiles.fileId?.lenght === undefined) {
       const usersId = await GetUserId(users.user?.id);
-      if (usersId.users[0] === undefined) {
-        console.log(usersId.users[0])
+      if (usersId.users[0]?.lenght !== undefined) {
         const userLogin = await PostUser(bodyUser)
-        console.log(userLogin)
+        console.log('entroo',userLogin)
       } else {
-        console.log("El usuario esta Logeado");
+        console.log("El usuario ya esta Logeado");
       }
     }
   };

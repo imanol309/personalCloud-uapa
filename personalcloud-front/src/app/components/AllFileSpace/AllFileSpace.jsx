@@ -14,8 +14,7 @@ function AllFileSpace() {
   const [viewMode, setViewMode] = useState(true);
   const [dataFile, setDataFile] = useState(null);
   const [updateDate, setUpdateDate] = useState(true);
-  const [hoverActivatedGrid, sethoverActivatedGrid] = useState(true);
-  const [hoverActivatedlist, sethoverActivatedlist] = useState(false);
+  const [hoverActivate, sethoverActivated] = useState(true);
 
   const toggleTheme = () => {
     setUpdateDate(!updateDate);
@@ -27,14 +26,12 @@ function AllFileSpace() {
 
   const convertToGrid = () => {
     setViewMode(true);
-    sethoverActivatedGrid(true);
-    sethoverActivatedlist(false);
+    sethoverActivated(true)
   };
 
   const convertToList = () => {
     setViewMode(false);
-    sethoverActivatedGrid(false);
-    sethoverActivatedlist(true);
+    sethoverActivated(false)
   };
 
   const signPhp = async () => {
@@ -66,6 +63,8 @@ function AllFileSpace() {
           <SearchBox
             convertToGrid={convertToGrid}
             convertToList={convertToList}
+            hoverActivate={hoverActivate}
+
             hoverActivatedGrid={hoverActivatedGrid}
             hoverActivatedlist={hoverActivatedlist}
           />

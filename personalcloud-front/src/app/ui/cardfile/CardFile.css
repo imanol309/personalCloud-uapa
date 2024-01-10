@@ -85,8 +85,30 @@
 
 .CardFile__Icons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 30%;
-  gap: 5px;
+  gap: 10px;
   margin: 10px;
+}
+
+.container__pureModal {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vh;
+  height: 100vh;
+}
+
+.container__iframe {
+  width: 100vh;
+  height: 100vh;
+}
+
+.img__modal {
+  width: 100%;
+  height: 100%;
 }

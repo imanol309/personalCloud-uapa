@@ -45,18 +45,19 @@ async function uploadFileToS3(file, fileName) {
 
 async function uploadFileToS3Pdf(filePath, fileName) {
   const typeFile = fileName.substring(fileName.length - 3)
+  console.log(typeFile)
   const ifFiles = {
     pdf: 'application/pdf',
-    docx: 'application/msword' ,
+    ocx: 'application/msword' ,
     txt: 'text/plain',
     lsx: 'lsx',
   };
   const fileStream = fs.createReadStream(filePath);
   const params = {
     Bucket: process.env.NEXT_AWS_S3_BUCKET_NAME,
-    Key: ifFiles[typeFile],
+    Key: `${fileName}`,
     Body: fileStream,
-    ContentType: `${ifFiles}`,
+    ContentType: ifFiles[typeFile],
   };
   const command = new PutObjectCommand(params);
   try {

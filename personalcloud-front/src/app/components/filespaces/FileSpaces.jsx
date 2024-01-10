@@ -1,6 +1,6 @@
-import './FileSpaces.css';
-import { CardFile } from '@/app/ui';
-import CloudFlareFile from '../cloudFlareFile/CloudFlareFile';
+import "./FileSpaces.css";
+import { CardFile } from "@/app/ui";
+import CloudFlareFile from "../cloudFlareFile/CloudFlareFile";
 
 export const FileSpaces = ({ viewMode, dataFile, filteredData }) => {
   return (
@@ -9,16 +9,20 @@ export const FileSpaces = ({ viewMode, dataFile, filteredData }) => {
         <h1 className="FileSpaces__Title">File Spaces</h1>
         <CloudFlareFile />
       </div>
-      <div className={viewMode ? 'FileSpaces__Grid' : 'FileSpaces__List'}>
+      <div className={viewMode ? "FileSpaces__Grid" : "FileSpaces__List"}>
         {!dataFile ? (
           <h4>Cargando datos...</h4>
+        ) : dataFile[0] === undefined ? (
+          <div>
+            <h4>No tienes datos, agrega algunos</h4>
+          </div>
         ) : filteredData.length === 0 ? (
           <h4>No hay resultados de búsqueda</h4>
         ) : (
           filteredData.map((data, index) => (
             <CardFile viewMode={viewMode} key={index} data={data} />
           ))
-        )}  
+        )}
       </div>
     </div>
   );

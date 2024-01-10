@@ -15,7 +15,6 @@ function CloudFlareFile() {
   const users = useUser();
   const [state, formAction] = useFormState(uploadFile, initialState);
 
-  console.log(updateDate)
 
   const handleButtonClick = () => {
     toggleTheme();
@@ -29,7 +28,6 @@ function CloudFlareFile() {
     };
     const data = await PostFile(body);
     if(data) {
-      console.log(data.result);
       handleButtonClick()
     }
   };

@@ -1,22 +1,23 @@
-import "./SearchBox.css";
-import gripIcon from "../../../../public/icons/grid.svg";
-import listIcon from "../../../../public/icons/list.svg";
-import Image from "next/image";
-import Seach from "../../components/Seach/Seach";
+import './SearchBox.css';
+import gripIcon from '../../../../public/icons/grid.svg';
+import listIcon from '../../../../public/icons/list.svg';
+import Image from 'next/image';
+import Seach from '../../components/Seach/Seach';
 export const SearchBox = ({
   convertToGrid,
   convertToList,
-  hoverActivate
+  hoverActivate,
+  handleInputChange,
 }) => {
   return (
     <div className="SearchBox">
-      <Seach />
+      <Seach handleInputChange={handleInputChange} />
       <div className="container__button">
         <button
           className={
             hoverActivate
-              ? "SearchBox__Button Hover__Activated"
-              : "SearchBox__Button"
+              ? 'SearchBox__Button Hover__Activated'
+              : 'SearchBox__Button'
           }
           onClick={convertToGrid}
         >
@@ -24,16 +25,16 @@ export const SearchBox = ({
             src={gripIcon}
             className="Icon__Grid"
             alt="GridIcon"
-            height={"auto"}
-            width={"auto"}
+            height={'auto'}
+            width={'auto'}
           />
           Grid
         </button>
         <button
           className={
             hoverActivate
-              ? "SearchBox__Button"
-              : "SearchBox__Button Hover__Activated"
+              ? 'SearchBox__Button'
+              : 'SearchBox__Button Hover__Activated'
           }
           onClick={convertToList}
         >
@@ -41,8 +42,8 @@ export const SearchBox = ({
             src={listIcon}
             className="Icon__List"
             alt="ListIcon"
-            height={"auto"}
-            width={"auto"}
+            height={'auto'}
+            width={'auto'}
           />
           List
         </button>

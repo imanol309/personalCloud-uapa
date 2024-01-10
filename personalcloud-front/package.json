@@ -11,11 +11,13 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.485.0",
     "@clerk/nextjs": "^4.29.1",
+    "convertapi-js": "~1.1",
     "fs": "^0.0.1-security",
     "next": "14.0.4",
     "path": "^0.12.7",
     "react": "^18",
     "react-dom": "^18",
+    "react-pure-modal": "^2.2.5",
     "react-slick": "^0.29.0",
     "sharp": "^0.33.1",
     "slick-carousel": "^1.8.1",

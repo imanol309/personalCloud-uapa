@@ -92,3 +92,29 @@ a {
 .notFound__Image {
   width: 100%;
 }
+
+.NavBar__Position {
+  width: 75%;
+  position: fixed;
+  z-index: 99999999 !important;
+}
+
+@media screen and (max-width: 1300px) {
+  .container__home {
+    width: 85%;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container__home {
+    width: 98%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .NavBar__Position {
+    width: 98%;
+  background-color: #f6f6f6;
+
+  }
+}

@@ -16,7 +16,7 @@ export const Hero = () => {
           línea seguro donde puedes almacenar, organizar y acceder a toda tu
           información importante.
         </p>
-        <Button text="Empezar" type="rectangle" />
+        <Button text="Empezar" type="rectangle"  />
       </div>
       <div className="Hero__Section">
         <Image src={fill} alt="Picture of the author" className="Hero__Image" height={"auto"} width={"auto"} />

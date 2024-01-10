@@ -4,7 +4,7 @@ import './globals.css';
 export default function Home() {
   return (
     <div className='container__home'>
-      <header>
+      <header className='NavBar__Position'>
         <NavBar />
       </header>
       <main>

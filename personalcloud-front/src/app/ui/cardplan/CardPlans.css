@@ -3,7 +3,8 @@
   border: 2px solid var(--color-secondary);
   border-radius: 10px;
   padding: 40px 30px;
-  /* width: 400px; */
+  /* width: 320px; */
+  width: 30%;
   height: 750px;
   display: flex;
   flex-direction: column;
@@ -42,4 +43,16 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+@media screen and (max-width: 940px) {
+  .CardPlans {
+    width: 50%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .CardPlans {
+    width: 90%;
+  }
 }

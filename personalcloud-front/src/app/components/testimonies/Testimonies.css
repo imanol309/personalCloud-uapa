@@ -34,7 +34,6 @@
   width: 600px;
 }
 
-
 .Slider {
   width: 100%;
 }
@@ -54,4 +53,19 @@
   color: var(--color-primary);
 }
 
+@media screen and (max-width: 1000px) {
+  .Testimonies__header {
+    display: flex;
+  }
 
+  .Testimonies__Title {
+    font-size: var(--font-size-md);
+  }
+  .Testimonies__Description {
+    font-size: var(--font-size-xs);
+    width: 100%;
+  }
+  .Slider {
+    width: 85%;
+  }
+}

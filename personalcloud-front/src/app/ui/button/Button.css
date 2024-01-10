@@ -5,6 +5,7 @@
   cursor: pointer;
   transition: color 0.3s ease-in-out;
   border: 2px solid var(--color-primary);
+  text-align: center;
 }
 
 .button:hover {

@@ -1,5 +1,5 @@
 .WhyChooseUs {
-  height: 80vh;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 5%;
@@ -30,5 +30,33 @@
 }
 
 .WhyChooseUs__Box {
-  width: 750px;
+  width: 50%;
+}
+
+.WhyChooseUs__Image {
+  width: 100%;
+  margin: 0;
+  /* object-fit: cover; */
+}
+
+@media screen and (max-width: 940px) {
+  .WhyChooseUs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .WhyChooseUs__Box {
+    /* background-color: red; */
+    width: 100%;
+  }
+  .WhyChooseUs__Title {
+    font-size: var(--font-size-md);
+  }
+  .WhyChooseUs__Description {
+    font-size: var(--font-size-xs);
+    text-align: justify;
+  }
+  .WhyChooseUs__List--Item {
+    font-size: var(--font-size-xs);
+    line-height: 2;
+  }
 }

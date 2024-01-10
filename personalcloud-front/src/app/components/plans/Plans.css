@@ -26,4 +26,13 @@
   display: flex;
   justify-content: space-between;
   color: var(--color-secondary);
+  align-items: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 938px) {
+  .Plans__List {
+    flex-direction: column;
+    gap: 25px;
+  }
 }

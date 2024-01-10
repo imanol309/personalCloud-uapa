@@ -18,7 +18,7 @@ export const WhyChooseUs = () => {
       {" "}
       <div className="WhyChooseUs" id="whychooseus">
         <div>
-          <Image src={CloudSync} alt="Picture of the CloudSync" className="" height={"auto"} width={"auto"} />
+          <Image src={CloudSync} alt="Picture of the CloudSync" className="WhyChooseUs__Image"  />
         </div>
         <div className="WhyChooseUs__Box">
           <h2 className="WhyChooseUs__Title">Por qué Elegir Personal Cloud?</h2>

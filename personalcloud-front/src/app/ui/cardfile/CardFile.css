@@ -44,6 +44,10 @@
   text-overflow: ellipsis;
 }
 
+.w3-modal{
+  display: none;
+}
+
 .CardFile--List:hover {
   scale: 1.02;
 }

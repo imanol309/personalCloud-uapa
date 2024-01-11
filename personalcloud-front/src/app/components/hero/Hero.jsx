@@ -1,13 +1,13 @@
 import "./Hero.css";
 import Image from "next/image";
-import fill from "../../../../public/icons/fill.png";
 import { Button } from "@/app/ui";
+import dashboard_shots_so from "../../../../public/images/dashboard_shots_so.png";
+
 export const Hero = () => {
   return (
     <div className="Hero">
-      <div className="Hero__Section">
+      <div style={{width: "40%"}} className="container_text">
         <h1 className="Hero__Title">
-          {/* Bienvenido a Personal Cloud: <br /> */}
           <span className="Hero__Title--Bold">Tu Refugio Digital Privado</span>
         </h1>
         <p className="Hero__Descripcion">
@@ -16,10 +16,17 @@ export const Hero = () => {
           línea seguro donde puedes almacenar, organizar y acceder a toda tu
           información importante.
         </p>
-        <Button text="Empezar" type="rectangle"  />
+        <Button text="Empezar" type="rectangle" urlSign={"dashboard/my-cloud"} />
       </div>
-      <div className="Hero__Section">
-        <Image src={fill} alt="Picture of the author" className="Hero__Image" height={"auto"} width={"auto"} />
+
+      <div style={{widh: "60%"}}>
+        <Image
+          src={dashboard_shots_so}
+          alt="Dashboard"
+          className="Hero__Image"
+          height={"auto"}
+          width={"auto"}
+        />
       </div>
     </div>
   );

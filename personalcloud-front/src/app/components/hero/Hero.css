@@ -1,25 +1,35 @@
 .Hero {
-  min-height: 90vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   display: flex;
-  /* align-items: center; */
-  padding-top: 12%;
-  justify-content: space-between;
+  min-height: 90vh;
+  /* flex-direction: column; */
+  padding-top: 8%;
+  gap: 10%;
 }
-
+.container_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .Hero__Title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
   line-height: 1.2;
   margin: 0 0 20px 0;
+  text-align: center;
 }
+
 .Hero__Title--Bold {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
 }
 
 .Hero__Descripcion {
-  width: 60%;
+  width: 100%;
   margin: 20px 0 40px 0;
   color: var(--color-secondary);
   text-align: justify;
@@ -30,6 +40,7 @@
 .Hero__Image {
   max-width: 100%;
   height: auto;
+  /* width: 65%; */
 }
 
 @media screen and (max-width: 1000px) {

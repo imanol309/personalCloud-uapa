@@ -21,7 +21,6 @@ async function GetUserId(id) {
     });
     const users = await response.json();
     return { users }
-
 }
 
 async function getDataFileForUser(id) {
